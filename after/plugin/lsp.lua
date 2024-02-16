@@ -6,7 +6,7 @@ require('mason-nvim-lint').setup({
         'jsonlint',
         'hadolint',
     },
-    automatic_installation = false
+    automatic_installation = false,
 })
 
 local servers = {
