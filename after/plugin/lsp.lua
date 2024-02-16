@@ -12,6 +12,10 @@ require('mason-nvim-lint').setup({
 local servers = {
   gopls = {},
   golangci_lint_ls = {},
+  templ = {
+    filetypes = { "html", "templ" },
+  },
+  html = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },

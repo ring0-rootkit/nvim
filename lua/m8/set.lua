@@ -52,3 +52,10 @@ vim.o.termguicolors = true
 vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+
+-- add support for go's templ
+vim.filetype.add({
+    extension = {
+        templ = "templ",
+    },
+})
