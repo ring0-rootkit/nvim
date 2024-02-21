@@ -11,7 +11,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Bind Esc to jj
-vim.keymap.set('i', 'jj', '<Esc>')
+-- vim.keymap.set('i', 'jj', '<Esc>')
 
 vim.keymap.set('n', '<leader>cc', '<Cmd>:%bd|e#<CR>')
 vim.keymap.set('n', '<leader>e','<Cmd>NvimTreeToggle<CR>')
