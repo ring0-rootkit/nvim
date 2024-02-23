@@ -2,7 +2,6 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 require('mason-nvim-lint').setup({
     ensure_installed = {
-        'golangci-lint',
         'jsonlint',
         'hadolint',
     },
@@ -10,12 +9,8 @@ require('mason-nvim-lint').setup({
 })
 
 local servers = {
-  gopls = {},
-  golangci_lint_ls = {},
-  templ = {
-    filetypes = { "html", "templ" },
-  },
   html = {},
+  clangd = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -52,6 +47,7 @@ mason_lspconfig.setup_handlers {
 -- configure FORMAT on save
 require("lsp-format").setup {}
 require("lspconfig").gopls.setup { on_attach = require("lsp-format").on_attach }
+require("lspconfig").clangd.setup { on_attach = require("lsp-format").on_attach }
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
