@@ -2,6 +2,7 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 require('mason-nvim-lint').setup({
     ensure_installed = {
+        'golangci-lint',
         'jsonlint',
         'hadolint',
     },
@@ -10,6 +11,11 @@ require('mason-nvim-lint').setup({
 
 local servers = {
   html = {},
+  gopls = {},
+  golangci_lint_ls = {},
+  templ = {
+    filetypes = { "html", "templ" },
+  },
   clangd = {},
   lua_ls = {
     Lua = {
