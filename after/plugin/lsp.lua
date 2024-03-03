@@ -53,7 +53,7 @@ mason_lspconfig.setup_handlers {
 -- configure FORMAT on save
 require("lsp-format").setup {}
 require("lspconfig").gopls.setup { on_attach = require("lsp-format").on_attach }
-require("lspconfig").clangd.setup { on_attach = require("lsp-format").on_attach }
+--require("lspconfig").clangd.setup { on_attach = require("lsp-format").on_attach }
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
