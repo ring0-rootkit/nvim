@@ -10,7 +10,6 @@ require('mason-nvim-lint').setup({
 })
 
 local servers = {
-  html = {},
   gopls = {},
   golangci_lint_ls = {},
   templ = {
