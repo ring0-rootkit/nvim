@@ -16,6 +16,12 @@ local servers = {
     filetypes = { "html", "templ" },
   },
   clangd = {},
+  html = {
+    filetypes = {"html", "templ"},
+  },
+  htmx = {
+    filetypes = {"html", "templ"},
+  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -52,6 +58,7 @@ mason_lspconfig.setup_handlers {
 -- configure FORMAT on save
 require("lsp-format").setup {}
 require("lspconfig").gopls.setup { on_attach = require("lsp-format").on_attach }
+require("lspconfig").templ.setup { on_attach = require("lsp-format").on_attach }
 --require("lspconfig").clangd.setup { on_attach = require("lsp-format").on_attach }
 
 -- [[ Configure nvim-cmp ]]

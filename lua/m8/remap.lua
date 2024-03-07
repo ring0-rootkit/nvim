@@ -15,3 +15,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 vim.keymap.set('n', '<leader>cc', '<Cmd>:%bd|e#<CR>')
 vim.keymap.set('n', '<leader>e','<Cmd>NvimTreeToggle<CR>')
+
+
+vim.filetype.add({ extension = { templ = "templ" } })
