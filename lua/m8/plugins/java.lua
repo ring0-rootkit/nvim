@@ -13,7 +13,7 @@ return {
           local extendedClientCapabilities = jdtls.extendedClientCapabilities
           extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
-          local launcher, os_config, lombok = get_jdtls()
+          local launcher, os_config = get_jdtls()
           local workspace_dir = get_workspace()
           local bundles = get_bundles()
 
@@ -67,7 +67,7 @@ return {
               "java.base/java.util=ALL-UNNAMED",
               "--add-opens",
               "java.base/java.lang=ALL-UNNAMED",
-              "-javaagent:" .. lombok,
+              "-javaagent:" .. "/home/m8/.config/nvim/dependencies/lombok.jar",
               "-jar",
               launcher,
               "-configuration",
