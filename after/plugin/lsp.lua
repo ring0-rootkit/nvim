@@ -10,6 +10,14 @@ require('mason-nvim-lint').setup({
 })
 
 local servers = {
+  jdtls = {
+    codeLens = {
+        enable = true,
+      },
+      completion = {
+        callSnippet = "Replace",
+      },
+  },
   gopls = {
     codeLens = {
         enable = true,
