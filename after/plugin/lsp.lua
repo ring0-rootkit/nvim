@@ -1,3 +1,4 @@
+require('java').setup()
 require('mason').setup()
 require('mason-lspconfig').setup()
 require('mason-nvim-lint').setup({
