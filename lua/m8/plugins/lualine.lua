@@ -5,7 +5,7 @@ return {
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'tokyonight',
+        theme = 'moonfly',
         component_separators = '|',
         section_separators = '',
       },
