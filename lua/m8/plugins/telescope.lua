@@ -14,7 +14,7 @@ return {
     config = function ()
         require('telescope').setup {
           defaults = {
-            path_display = {"smart"},
+            path_display = {"truncate", truncate = 3},
             mappings = {
               i = {
                 ['<C-u>'] = false,
