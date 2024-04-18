@@ -15,5 +15,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>cc', '<Cmd>:%bd|e#<CR>')
 vim.keymap.set('n', '<leader>e','<Cmd>NvimTreeToggle<CR>')
 
+vim.keymap.set('v', '<','<gv')
+vim.keymap.set('v', '>','>gv')
 
 vim.filetype.add({ extension = { templ = "templ" } })
