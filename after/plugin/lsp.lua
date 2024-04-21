@@ -10,27 +10,27 @@ require('mason-nvim-lint').setup({
     automatic_installation = false,
 })
 
--- Specify how the border looks like
-local border = {
-    { '┌', 'FloatBorder' },
-    { '─', 'FloatBorder' },
-    { '┐', 'FloatBorder' },
-    { '│', 'FloatBorder' },
-    { '┘', 'FloatBorder' },
-    { '─', 'FloatBorder' },
-    { '└', 'FloatBorder' },
-    { '│', 'FloatBorder' },
-}
+-- add borders to windows
+local _border = "single"
 
--- Add the border on hover and on signature help popup window
-local handlers = {
-    ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-    ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = _border
+  }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = _border
+  }
+)
+
+vim.diagnostic.config{
+  float={border=_border}
 }
 
 local servers = {
   jdtls = {
-    handlers = handlers,
     codeLens = {
         enable = true,
       },
@@ -39,7 +39,6 @@ local servers = {
       },
   },
   gopls = {
-    handlers = handlers,
     codeLens = {
         enable = true,
       },
@@ -96,6 +95,11 @@ require("lsp-format").setup {}
 require("lspconfig").gopls.setup { on_attach = require("lsp-format").on_attach }
 require("lspconfig").templ.setup { on_attach = require("lsp-format").on_attach }
 --require("lspconfig").clangd.setup { on_attach = require("lsp-format").on_attach }
+
+-- add borders to floating windows
+require('lspconfig.ui.windows').default_options = {
+  border = _border
+}
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
