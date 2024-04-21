@@ -10,7 +10,7 @@ vim.o.hlsearch = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.colorcolumn = "81"
-vim.o.cursorline = true
+vim.o.cursorline = false
 vim.o.scrolloff = 5
 
 -- Enable mouse mode
