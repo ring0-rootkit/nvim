@@ -12,9 +12,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.open_float, { desc = 'Open float
 -- Bind Esc to jj
 -- vim.keymap.set('i', 'jj', '<Esc>')
 
+-- close all buffers except of current
 vim.keymap.set('n', '<leader>cc', '<Cmd>:%bd|e#<CR>')
+
 vim.keymap.set('n', '<leader>e','<Cmd>NvimTreeToggle<CR>')
 
+-- for more convinient formating
 vim.keymap.set('v', '<','<gv')
 vim.keymap.set('v', '>','>gv')
 
