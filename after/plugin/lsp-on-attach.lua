@@ -40,7 +40,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, opts)
     vim.keymap.set('n', '<leader>qf', quickfix, opts)
-    vim.keymap.set('n', '<leader>rr', "<cmd>LspRestart<CR>", opts)
-    vim.keymap.set('n', '<leader>err', 'oif err != nil {<CR><CR>}<Esc>ki<tab>', opts)
+    vim.keymap.set('n', '<leader>lc', "<cmd>LspStop<CR>", opts)
+    vim.keymap.set('n', '<leader>ls', "<cmd>LspStart<CR>", opts)
+    vim.keymap.set('n', '<leader>err', 'oif err != nil {<CR>}<esc>ko', opts)
   end,
 })
