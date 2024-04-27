@@ -3,7 +3,7 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 require('mason-nvim-lint').setup({
     ensure_installed = {
-        'golangci-lint',
+        -- 'golangci-lint',
         'jsonlint',
         'hadolint',
     },
@@ -46,7 +46,7 @@ local servers = {
         callSnippet = "Replace",
       },
     },
-  golangci_lint_ls = {},
+  -- golangci_lint_ls = {},
   templ = {
     filetypes = { "html", "templ" },
   },
