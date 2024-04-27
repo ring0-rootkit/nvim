@@ -1,6 +1,6 @@
 require('java').setup()
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('fidget').setup()
 require('mason-nvim-lint').setup({
     ensure_installed = {
         -- 'golangci-lint',
@@ -29,6 +29,18 @@ vim.diagnostic.config{
   float={border=_border}
 }
 
+vim.diagnostic.config({
+            -- update_in_insert = true,
+            float = {
+                focusable = false,
+                style = "minimal",
+                border = "rounded",
+                source = "always",
+                header = "",
+                prefix = "",
+            },
+        })
+
 local servers = {
   jdtls = {
     codeLens = {
@@ -39,12 +51,20 @@ local servers = {
       },
   },
   gopls = {
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        analyses = {
+          unusedparams = false,
+        },
+      },
+    },
     codeLens = {
         enable = true,
-      },
-      completion = {
-        callSnippet = "Replace",
-      },
+    },
+    completion = {
+      callSnippet = "Replace",
+    },
     },
   -- golangci_lint_ls = {},
   templ = {
@@ -62,7 +82,7 @@ local servers = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
       -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-      -- diagnostics = { disable = { 'missing-fields' } },
+      diagnostics = { disable = { 'missing-fields' } },
     },
   },
 }
