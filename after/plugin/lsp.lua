@@ -55,7 +55,7 @@ local servers = {
       gopls = {
         completeUnimported = true,
         analyses = {
-          unusedparams = false,
+          unusedparams = true,
         },
       },
     },
@@ -66,6 +66,7 @@ local servers = {
       callSnippet = "Replace",
     },
     },
+    rust_analyzer = {},
   -- golangci_lint_ls = {},
   templ = {
     filetypes = { "html", "templ" },
@@ -114,6 +115,7 @@ mason_lspconfig.setup_handlers {
 require("lsp-format").setup {}
 require("lspconfig").gopls.setup { on_attach = require("lsp-format").on_attach }
 require("lspconfig").templ.setup { on_attach = require("lsp-format").on_attach }
+require("lspconfig").rust_analyzer.setup { on_attach = require("lsp-format").on_attach }
 --require("lspconfig").clangd.setup { on_attach = require("lsp-format").on_attach }
 
 -- add borders to floating windows
