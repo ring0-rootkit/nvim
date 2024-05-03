@@ -1,6 +1,5 @@
 require('java').setup()
 require('mason').setup()
-require('fidget').setup()
 require('mason-nvim-lint').setup({
     ensure_installed = {
         -- 'golangci-lint',
