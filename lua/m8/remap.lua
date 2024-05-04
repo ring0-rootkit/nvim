@@ -21,4 +21,6 @@ vim.keymap.set('n', '<leader>e','<Cmd>NvimTreeToggle<CR>')
 vim.keymap.set('v', '<','<gv')
 vim.keymap.set('v', '>','>gv')
 
+vim.keymap.set('n', '<leader>x',':! chmod +x %<CR>', { desc = 'Make currently oppend file executable' })
+
 vim.filetype.add({ extension = { templ = "templ" } })
