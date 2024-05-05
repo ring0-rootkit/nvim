@@ -66,6 +66,7 @@ local servers = {
     },
     },
     rust_analyzer = {},
+    tsserver = {},
   -- golangci_lint_ls = {},
   templ = {
     filetypes = { "html", "templ" },
@@ -115,6 +116,7 @@ require("lsp-format").setup {}
 require("lspconfig").gopls.setup { on_attach = require("lsp-format").on_attach }
 require("lspconfig").templ.setup { on_attach = require("lsp-format").on_attach }
 require("lspconfig").rust_analyzer.setup { on_attach = require("lsp-format").on_attach }
+require("lspconfig").tsserver.setup { on_attach = require("lsp-format").on_attach }
 --require("lspconfig").clangd.setup { on_attach = require("lsp-format").on_attach }
 
 -- add borders to floating windows
