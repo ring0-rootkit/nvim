@@ -4,7 +4,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
         underline = true,
         virtual_text = {
             spacing = 5,
-            severity = { min = vim.diagnostic.severity.WARN },
+            severity = { min = vim.diagnostic.severity.HINT},
         },
         update_in_insert = true,
     }
