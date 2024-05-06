@@ -3,6 +3,7 @@ return {
     name = "rose-pine",
     init = function()
         require("rose-pine").setup({
+            -- variant = "dawn",
             styles = {
                 transparency = true,
             },
