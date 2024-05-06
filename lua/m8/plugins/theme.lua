@@ -1,4 +1,5 @@
 return {
+    {
     "rose-pine/neovim",
     name = "rose-pine",
     init = function()
@@ -9,4 +10,6 @@ return {
             },
         })
     end,
+    },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 }

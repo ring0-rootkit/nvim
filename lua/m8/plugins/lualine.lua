@@ -6,7 +6,7 @@ return {
       options = {
         icons_enabled = true,
         -- theme = 'moonfly',
-        theme = 'rose-pine',
+        theme = 'catppucine-latte',
         component_separators = '|',
         section_separators = '',
       },
