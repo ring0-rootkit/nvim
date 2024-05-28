@@ -1,6 +1,6 @@
-require("m8.set")
-require("m8.remap")
-require("m8.lazy")
+require("ring0.set")
+require("ring0.remap")
+require("ring0.lazy")
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
