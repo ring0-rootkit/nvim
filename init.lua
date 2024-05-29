@@ -4,7 +4,6 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
-vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.undofile = true
@@ -24,6 +23,7 @@ vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
+vim.opt.guicursor = "i:block"
 
 -- [[ Basic Keymaps ]]
 vim.opt.hlsearch = true
