@@ -203,7 +203,7 @@ require("lazy").setup({
 	},
 
 	{
-		"blazkowolf/gruber-darker.nvim",
+		"ring0-rootkit/gruber-darker.nvim",
 		-- "catppuccin/nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
