@@ -203,10 +203,12 @@ require("lazy").setup({
 	},
 
 	{
-		"catppuccin/nvim",
+		"blazkowolf/gruber-darker.nvim",
+		-- "catppuccin/nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			vim.cmd.colorscheme("catppuccin-mocha")
+			-- vim.cmd.colorscheme("catppuccin-mocha")
+			vim.cmd.colorscheme("gruber-darker")
 		end,
 	},
 
