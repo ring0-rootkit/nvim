@@ -25,20 +25,24 @@ vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.opt.guicursor = "i:block"
 
+function map(mode, keystroke, opts)
+	vim.keymap.set(mode, keystroke, opts)
+end
+
 -- [[ Basic Keymaps ]]
 vim.opt.hlsearch = true
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 
 -- [[ Basic Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -93,16 +97,16 @@ require("lazy").setup({
 			pcall(require("telescope").load_extension, "ui-select")
 
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-			vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
-			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+			map("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+			map("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+			map("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+			map("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+			map("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+			map("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+			map("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+			map("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
-			vim.keymap.set("n", "<leader>/", function()
+			map("n", "<leader>/", function()
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
 					previewer = false,
@@ -122,26 +126,18 @@ require("lazy").setup({
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 				callback = function(event)
-					local map = function(keys, func, desc)
-						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-					end
-
-					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-					map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-					map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-					map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-					map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-					map(
-						"<leader>ws",
-						require("telescope.builtin").lsp_dynamic_workspace_symbols,
-						"[W]orkspace [S]ymbols"
-					)
-					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-					map("K", vim.lsp.buf.hover, "Hover Documentation")
-					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-					map("<leader>ee", "oif err != nil {<CR>}<esc>ko", "Place err check for go")
-					vim.keymap.set("i", "<C-space>", "<C-x><C-o>")
+					map("n", "gd", require("telescope.builtin").lsp_definitions)
+					map("n", "gr", require("telescope.builtin").lsp_references)
+					map("n", "gI", require("telescope.builtin").lsp_implementations)
+					map("n", "<leader>D", require("telescope.builtin").lsp_type_definitions)
+					map("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols)
+					map("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols)
+					map("n", "<leader>rn", vim.lsp.buf.rename)
+					map("n", "<leader>ca", vim.lsp.buf.code_action)
+					map("n", "K", vim.lsp.buf.hover)
+					map("n", "gD", vim.lsp.buf.declaration)
+					map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
+					map("i", "<C-space>", "<C-x><C-o>")
 				end,
 			})
 
@@ -222,6 +218,30 @@ require("lazy").setup({
 		"stevearc/oil.nvim",
 		opts = {},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		init = function()
+			local harpoon = require("harpoon")
+			-- REQUIRED
+			harpoon:setup()
+			-- REQUIRED
+			map("n", "<leader>ja", function()
+				harpoon:list():add()
+			end)
+			map("n", "<leader>je", function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end)
+
+			map("n", "<C-h>", function()
+				harpoon:list():prev()
+			end)
+			map("n", "<C-l>", function()
+				harpoon:list():next()
+			end)
+		end,
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 })
 
