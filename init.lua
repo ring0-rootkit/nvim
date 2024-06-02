@@ -201,10 +201,10 @@ require("lazy").setup({
 	},
 
 	{
-		"ring0-rootkit/ring0-light.nvim",
+		"catppuccin/nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			vim.cmd.colorscheme("ring0-light")
+			vim.cmd.colorscheme("catppuccin-latte")
 		end,
 	},
 
