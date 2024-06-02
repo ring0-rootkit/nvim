@@ -2,7 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "conform.nvim": { "branch": "master", "commit": "63e0a32c85a39484813957dc480f171907aa90b9" },
   "gitblame.nvim": { "branch": "main", "commit": "e4b368e4fed15545d89af2cbed861686a16863d2" },
-  "gruber-darker.nvim": { "branch": "main", "commit": "99120eac2b7bab095da797f73f16047d478157f0" },
+  "gruber-darker.nvim": { "branch": "main", "commit": "58679cfc2e6f8d01d27dea57a392ec083fca25f1" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "lazy.nvim": { "branch": "main", "commit": "b0ba3f9399bf48c86abaa4db1a40bd0b681d5018" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a4caa0d083aab56f6cd5acf2d42331b74614a585" },
