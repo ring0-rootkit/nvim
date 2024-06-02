@@ -49,7 +49,7 @@ map("n", "<leader>b", ":Gitblame<CR>")
 -- create terminal
 map("n", "<leader>t", ":terminal<CR>")
 -- go to normal mode from insert in terminal
-map("t", "<leader><Esc>", "<C-\\><C-n>")
+map("t", "<leader>jj", "<C-\\><C-n>")
 
 -- [[ Basic Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", {
