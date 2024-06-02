@@ -200,15 +200,6 @@ require("lazy").setup({
 		},
 	},
 
-	{
-		-- "catppuccin/nvim",
-		"ring0-rootkit/ring0-light.nvim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
-		init = function()
-			vim.cmd.colorscheme("ring0-light")
-		end,
-	},
-
 	{ -- Highlight todo, notes, etc in comments
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
@@ -245,6 +236,13 @@ require("lazy").setup({
 	{
 		"ring0-rootkit/gitblame.nvim",
 		opts = {},
+	},
+	{
+		"ring0-rootkit/gruber-darker.nvim",
+		priority = 1000, -- Make sure to load this before all the other start plugins.
+		init = function()
+			vim.cmd.colorscheme("gruber-darker")
+		end,
 	},
 })
 
