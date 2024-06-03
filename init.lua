@@ -25,6 +25,8 @@ vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.opt.guicursor = "i:block"
 
+vim.diagnostic.config({ virtual_text = false })
+
 local map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
 end
@@ -234,18 +236,23 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
+		"akinsho/git-conflict.nvim",
+		version = "*",
+		config = { default_mappings = false },
+		init = function()
+			map("n", "[x", ":GitConflictPrevConflict<CR>")
+			map("n", "]x", ":GitConflictNextConflict<CR>")
+		end,
+	},
+	{
 		"ring0-rootkit/gitblame.nvim",
 		opts = {},
 	},
 	{
 		"ring0-rootkit/gruber-darker.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
-		init = function()
+		config = function()
 			vim.cmd.colorscheme("gruber-darker")
 		end,
 	},
-})
-
-vim.diagnostic.config({
-	virtual_text = false,
 })
