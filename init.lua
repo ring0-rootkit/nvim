@@ -248,11 +248,12 @@ require("lazy").setup({
 		"ring0-rootkit/gitblame.nvim",
 		opts = {},
 	},
+	"ring0-rootkit/gruber-darker.nvim",
 	{
-		"ring0-rootkit/gruber-darker.nvim",
+		"ring0-rootkit/ring0-light.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		config = function()
-			vim.cmd.colorscheme("gruber-darker")
+			vim.cmd.colorscheme("ring0-light")
 		end,
 	},
 })
