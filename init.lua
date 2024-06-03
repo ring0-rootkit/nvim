@@ -46,6 +46,8 @@ map("n", "<C-u>", "<C-u>zz")
 
 map("n", "<leader>b", ":Gitblame<CR>")
 
+map("n", ":", ":<C-f>i")
+
 -- [[ Basic Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
