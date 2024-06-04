@@ -253,7 +253,7 @@ require("lazy").setup({
 		"ring0-rootkit/ring0-light.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		config = function()
-			vim.cmd.colorscheme("ring0-light")
+			vim.cmd.colorscheme("gruber-darker")
 		end,
 	},
 })
