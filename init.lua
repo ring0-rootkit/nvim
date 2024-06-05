@@ -19,13 +19,12 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
+vim.opt.guicursor = "i:block"
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
-vim.opt.guicursor = "i:block"
-
-vim.diagnostic.config({ virtual_text = false })
+vim.o.colorcolumn = "80"
 
 local map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
@@ -152,7 +151,7 @@ require("lazy").setup({
 				gopls = {},
 				rust_analyzer = {},
 				tsserver = {},
-				lua_ls = {},
+				lua_ls = { settings = { Lua = { diagnostics = { globals = { "vim" } } } } },
 			}
 
 			require("mason").setup()
