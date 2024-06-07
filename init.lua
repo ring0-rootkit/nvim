@@ -146,26 +146,13 @@ require("lazy").setup({
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-			local servers = {
-				clangd = {},
-				gopls = {},
-				rust_analyzer = {},
-				tsserver = {},
-				lua_ls = { settings = { Lua = { diagnostics = { globals = { "vim" } } } } },
-			}
-
 			require("mason").setup()
-
-			local ensure_installed = vim.tbl_keys(servers or {})
-			vim.list_extend(ensure_installed, {
-				"stylua", -- Used to format Lua code
-			})
 
 			require("mason-lspconfig").setup({
 				handlers = {
 					function(server_name)
-						local server = servers[server_name] or {}
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						local server = {}
+						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, {})
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
