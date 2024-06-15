@@ -23,8 +23,12 @@ vim.opt.guicursor = "i:block"
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
-vim.o.completeopt = "menuone,noinsert,noselect,popup"
+vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
 vim.o.colorcolumn = "80"
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+	vim.lsp.handlers.hover, { border = "rounded", title = "Never gonna give you up..." }
+)
 
 local map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
