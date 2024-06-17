@@ -25,6 +25,7 @@ vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
 vim.o.colorcolumn = "80"
+vim.opt.termguicolors = true
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 	vim.lsp.handlers.hover, { border = "rounded", title = "Never gonna give you up..." }
