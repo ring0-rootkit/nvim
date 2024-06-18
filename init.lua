@@ -220,7 +220,7 @@ require("lazy").setup({
 			map("n", "<C-h>", function()
 				harpoon:list():prev()
 			end)
-			map("n", "<C-l>", function()
+			map("n", "<C-i>", function()
 				harpoon:list():next()
 			end)
 		end,
