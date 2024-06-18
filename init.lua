@@ -25,7 +25,7 @@ vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
 vim.o.colorcolumn = "80"
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 	vim.lsp.handlers.hover, { border = "rounded", title = "Never gonna give you up..." }
@@ -244,7 +244,7 @@ require("lazy").setup({
 		"ring0-rootkit/ring0-dark.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			vim.cmd.colorscheme("ring0dark")
+			vim.cmd.colorscheme("ring0light")
 		end,
 	},
 })
