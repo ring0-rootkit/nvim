@@ -26,8 +26,7 @@ vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
 vim.o.termguicolors = true
 
 vim.wo.wrap = false
-vim.o.sidescroll=5
+vim.o.sidescroll = 5
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-	vim.lsp.handlers.hover, { border = "rounded", title = "Never gonna give you up..." }
-)
+vim.lsp.handlers["textDocument/hover"] =
+	vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", title = "Never gonna give you up..." })
