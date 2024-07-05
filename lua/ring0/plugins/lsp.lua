@@ -12,7 +12,7 @@ return {
 			local cmp = require("cmp")
 
 			cmp.setup({
-				completion = { completeopt = "menuone,noinsert,noselect,popup,fuzzy" },
+				completion = { completeopt = "menu,menuone,noinsert" },
 				window = { completion = { border = "rounded" } },
 
 				mapping = cmp.mapping.preset.insert({
