@@ -26,16 +26,7 @@ return {
 			end,
 		})
 
-		local border = {
-			{ "🭽", "FloatBorder" },
-			{ "▔", "FloatBorder" },
-			{ "🭾", "FloatBorder" },
-			{ "▕", "FloatBorder" },
-			{ "🭿", "FloatBorder" },
-			{ "▁", "FloatBorder" },
-			{ "🭼", "FloatBorder" },
-			{ "▏", "FloatBorder" },
-		}
+		local border = "rounded"
 
 		-- LSP settings (for overriding per client)
 		local handlers = {
