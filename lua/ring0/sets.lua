@@ -29,3 +29,12 @@ vim.opt.colorcolumn = "81"
 
 vim.wo.wrap = false
 vim.o.sidescroll = 5
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+	underline = true,
+	virtual_text = {
+		spacing = 5,
+		severity = { min = vim.diagnostic.severity.HINT },
+	},
+	update_in_insert = true,
+})
