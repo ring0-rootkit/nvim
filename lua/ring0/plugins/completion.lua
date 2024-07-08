@@ -11,8 +11,14 @@ return { -- Autocompletion
 		local cmp = require("cmp")
 
 		cmp.setup({
-			completion = { completeopt = "menu,menuone,noinsert" },
+			-- disable Autocompletion as you type
+			completion = { completeopt = "menu,menuone,fuzzy", autocomplete = false },
 			window = { completion = { border = "rounded" } },
+			view = { docs = { auto_open = false } },
+			performance = { max_view_entries = 5 },
+			preselect = false,
+
+			experimental = { ghost_text = true },
 
 			mapping = cmp.mapping.preset.insert({
 				["<C-n>"] = cmp.mapping.select_next_item(),

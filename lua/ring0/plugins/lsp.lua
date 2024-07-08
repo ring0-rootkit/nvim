@@ -22,7 +22,6 @@ return {
 				map("n", "K", vim.lsp.buf.hover)
 				map("n", "gD", vim.lsp.buf.declaration)
 				map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
-				-- map("i", "<C-space>", "<C-x><C-o>")
 			end,
 		})
 
