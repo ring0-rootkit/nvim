@@ -12,10 +12,10 @@ return { -- Autocompletion
 
 		cmp.setup({
 			-- disable Autocompletion as you type
-			completion = { completeopt = "menuone,noinsert,fuzzy", autocomplete = false },
+			completion = { completeopt = "menuone,noinsert,fuzzy" },
 			window = { completion = { border = "rounded" } },
 			view = { docs = { auto_open = false } },
-			performance = { max_view_entries = 5 },
+			performance = { max_view_entries = 8 },
 			preselect = false,
 
 			experimental = { ghost_text = true },
