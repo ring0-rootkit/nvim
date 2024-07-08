@@ -18,3 +18,7 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 
 map("n", "<leader>b", ":Gitblame<CR>")
+
+--  use if to delete without saving to clipboard
+map("n", "x", '"_x')
+map("v", "x", '"_x')
