@@ -27,7 +27,7 @@ vim.o.termguicolors = true
 
 vim.opt.colorcolumn = "81"
 
-vim.wo.wrap = false
+vim.wo.wrap = true
 vim.o.sidescroll = 5
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
