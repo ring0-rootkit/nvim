@@ -6,7 +6,7 @@ return {
 		"ring0-rootkit/ring0-light.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			vim.cmd.colorscheme("rose-pine-main")
+			vim.cmd.colorscheme("catppuccin-latte")
 		end,
 	},
 	{ -- Highlight todo, notes, etc in comments
