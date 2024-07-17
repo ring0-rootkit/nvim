@@ -9,6 +9,12 @@ return {
 			vim.cmd.colorscheme("catppuccin-latte")
 		end,
 	},
+	{
+		"catppuccin",
+		opts = {
+			transparent_background = true,
+		},
+	},
 	{ -- Highlight todo, notes, etc in comments
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
