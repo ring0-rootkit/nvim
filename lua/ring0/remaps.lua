@@ -2,6 +2,10 @@ _G.map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
 end
 
+_G.wrap = function(mode)
+	vim.wo.wrap = mode
+end
+
 -- [[ Basic Keymaps ]]
 vim.opt.hlsearch = true
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
