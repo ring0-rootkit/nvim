@@ -17,7 +17,7 @@ vim.opt.splitbelow = false
 vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.scrolloff = 10
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
@@ -25,7 +25,7 @@ vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
 vim.o.termguicolors = true
 
-vim.opt.colorcolumn = "81"
+-- vim.opt.colorcolumn = "81"
 
 vim.wo.wrap = true
 vim.o.sidescroll = 5
