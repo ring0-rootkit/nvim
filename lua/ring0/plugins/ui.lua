@@ -2,16 +2,10 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
-		init = function()
-			vim.cmd.colorscheme("rose-pine-dawn")
-		end,
-	},
-	{
-		"catppuccin",
-		opts = {
-			transparent_background = true,
-		},
+		-- priority = 1000, -- Make sure to load this before all the other start plugins.
+		-- init = function()
+		-- 	vim.cmd.colorscheme("rose-pine-main")
+		-- end,
 	},
 	{ -- Highlight todo, notes, etc in comments
 		"folke/todo-comments.nvim",
@@ -35,7 +29,7 @@ return {
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
-					theme = "auto",
+					theme = "onelight",
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = {

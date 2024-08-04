@@ -22,13 +22,15 @@ vim.opt.scrolloff = 10
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
-vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
+-- vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
 vim.o.termguicolors = true
 
 -- vim.opt.colorcolumn = "81"
 
 vim.wo.wrap = true
 vim.o.sidescroll = 5
+
+vim.o.background = "light"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
