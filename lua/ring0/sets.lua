@@ -30,7 +30,7 @@ vim.o.termguicolors = true
 vim.wo.wrap = true
 vim.o.sidescroll = 5
 
-vim.o.background = "light"
+vim.o.background = "dark"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
