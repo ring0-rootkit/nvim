@@ -26,3 +26,10 @@ map("n", "<leader>b", ":Gitblame<CR>")
 --  use if to delete without saving to clipboard
 map("n", "x", '"_x')
 map("v", "x", '"_x')
+
+map("v", "<leader>s(", "di()<Esc>P")
+map("v", "<leader>s[", "di[]<Esc>P")
+map("v", "<leader>s{", "di{}<Esc>P")
+map("v", "<leader>s'", "di''<Esc>P")
+map("v", '<leader>s"', 'di""<Esc>P')
+map("v", "<leader>s`", "di``<Esc>P")
