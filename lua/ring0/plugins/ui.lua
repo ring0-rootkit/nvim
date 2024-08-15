@@ -1,11 +1,15 @@
 return {
 	{
+		"catppuccin/nvim",
 		"rose-pine/neovim",
+	},
+	{
+		"olimorris/onedarkpro.nvim",
 		-- name = "rose-pine",
-		-- priority = 1000, -- Make sure to load this before all the other start plugins.
-		-- init = function()
-		-- 	vim.cmd.colorscheme("rose-pine-main")
-		-- end,
+		priority = 1000, -- Make sure to load this before all the other start plugins.
+		init = function()
+			vim.cmd.colorscheme("onelight")
+		end,
 	},
 	{ -- Highlight todo, notes, etc in comments
 		"folke/todo-comments.nvim",
