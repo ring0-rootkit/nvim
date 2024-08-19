@@ -4,11 +4,17 @@ return {
 	},
 	{
 		"catppuccin/nvim",
-		-- name = "rose-pine",
+		name = "catppuccin",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
+	},
+	{
+		"catppuccin",
+		opts = {
+			transparent_background = true,
+		},
 	},
 	{ -- Highlight todo, notes, etc in comments
 		"folke/todo-comments.nvim",
