@@ -22,7 +22,7 @@ vim.opt.scrolloff = 10
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
--- vim.o.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
+vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.o.termguicolors = true
 
 -- vim.opt.colorcolumn = "81"
