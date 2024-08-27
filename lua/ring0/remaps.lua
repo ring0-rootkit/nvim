@@ -18,8 +18,8 @@ map("n", "<leader>e", vim.diagnostic.open_float)
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
+-- map("n", "<C-d>", "<C-d>zz")
+-- map("n", "<C-u>", "<C-u>zz")
 
 map("n", "<leader>b", ":Gitblame<CR>")
 
