@@ -2,13 +2,14 @@ return {
 	{
 		"rose-pine/neovim",
 		"blazkowolf/gruber-darker.nvim",
+		"devsjc/vim-jb",
 	},
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			vim.cmd.colorscheme("gruber-darker")
+			vim.cmd.colorscheme("catppuccin-latte")
 		end,
 	},
 	{
