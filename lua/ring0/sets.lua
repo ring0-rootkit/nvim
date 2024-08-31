@@ -25,6 +25,8 @@ vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.o.termguicolors = true
 
+vim.o.omnifunc = "lsp#complete#omnifunc"
+
 -- vim.opt.colorcolumn = "81"
 
 vim.wo.wrap = true
