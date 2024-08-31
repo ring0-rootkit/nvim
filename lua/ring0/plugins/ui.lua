@@ -2,7 +2,6 @@ return {
 	{
 		"rose-pine/neovim",
 		"blazkowolf/gruber-darker.nvim",
-		"devsjc/vim-jb",
 	},
 	{
 		"catppuccin/nvim",
