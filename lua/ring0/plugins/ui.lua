@@ -1,21 +1,22 @@
 return {
 	-- {
 	-- 	"rose-pine/neovim",
-  -- "catppuccin/nvim",
+	-- "blazkowolf/gruber-darker.nvim",
 	-- },
 	{
-		"blazkowolf/gruber-darker.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
 		init = function()
-			vim.cmd.colorscheme("gruber-darker")
+			vim.cmd.colorscheme("catppuccin-latte")
 		end,
 	},
-	-- {
-	-- 	"catppuccin",
-	-- 	opts = {
-	-- 		transparent_background = true,
-	-- 	},
-	-- },
+	{
+		"catppuccin",
+		opts = {
+			transparent_background = true,
+		},
+	},
 	{
 		"stevearc/oil.nvim",
 		opts = {},
