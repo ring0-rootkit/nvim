@@ -24,15 +24,16 @@ vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.o.termguicolors = true
+vim.o.guicursor = "n-v-c-i-ci-ve-sm:block,r-cr:hor20,o:hor50"
 
 vim.o.omnifunc = "lsp#complete#omnifunc"
 
 -- vim.opt.colorcolumn = "81"
 
 vim.wo.wrap = true
-vim.o.sidescroll = 5
+-- vim.o.sidescroll = 5
 
-vim.o.background = "light"
+vim.o.background = "dark"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
