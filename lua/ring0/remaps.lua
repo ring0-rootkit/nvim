@@ -33,3 +33,6 @@ map("v", "<leader>s{", "di{}<Esc>P")
 map("v", "<leader>s'", "di''<Esc>P")
 map("v", '<leader>s"', 'di""<Esc>P')
 map("v", "<leader>s`", "di``<Esc>P")
+
+
+map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
