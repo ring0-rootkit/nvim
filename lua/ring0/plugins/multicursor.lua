@@ -3,8 +3,8 @@ return {
 	version = "*", -- Use the latest tagged version
 	opts = {}, -- This causes the plugin setup function to be called
 	keys = {
-		{ "<C-A-j>", "<Cmd>MultipleCursorsAddDown<CR>i<esc>", mode = { "n", "x" }, desc = "Add cursor and move down" },
-		{ "<C-A-k>", "<Cmd>MultipleCursorsAddUp<CR>i<esc>", mode = { "n", "x" }, desc = "Add cursor and move up" },
+		{ "<C-A-j>", "<Cmd>MultipleCursorsAddDown<CR>", mode = { "n", "x" }, desc = "Add cursor and move down" },
+		{ "<C-A-k>", "<Cmd>MultipleCursorsAddUp<CR>", mode = { "n", "x" }, desc = "Add cursor and move up" },
 
 		{ "<C-A-Up>", "<Cmd>MultipleCursorsAddUp<CR>", mode = { "n", "i", "x" }, desc = "Add cursor and move up" },
 		{
