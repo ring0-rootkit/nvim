@@ -26,7 +26,7 @@ vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.o.termguicolors = true
 vim.o.guicursor = "n-v-c-i-ci-ve-sm:block,r-cr:hor20,o:hor50"
 
--- vim.opt.colorcolumn = "81"
+vim.opt.colorcolumn = "81"
 
 vim.wo.wrap = true
 -- vim.o.sidescroll = 5
