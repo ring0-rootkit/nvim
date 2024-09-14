@@ -11,12 +11,12 @@ return {
 			vim.cmd.colorscheme("gruber-darker")
 		end,
 	},
-	{
-		"catppuccin",
-		opts = {
-			transparent_background = true,
-		},
-	},
+	-- {
+	-- 	"catppuccin",
+	-- 	opts = {
+	-- 		transparent_background = true,
+	-- 	},
+	-- },
 	{
 		"stevearc/oil.nvim",
 		opts = {},
