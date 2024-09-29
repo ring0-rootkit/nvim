@@ -5,19 +5,19 @@ return {
 		"ring0-rootkit/ring0-light.nvim",
 	},
 	{
-		-- name = "catppuccin",
 		"rose-pine/neovim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
+		priority = 1000,
+		config = function()
+			require("rose-pine").setup({
+				styles = {
+					transparency = true,
+				},
+			})
+		end,
 		init = function()
-			vim.cmd.colorscheme("gruber-darker")
+			vim.cmd.colorscheme("rose-pine-main")
 		end,
 	},
-	-- {
-	-- 	"catppuccin",
-	-- 	opts = {
-	-- 		transparent_background = true,
-	-- 	},
-	-- },
 	{
 		"stevearc/oil.nvim",
 		opts = {},
