@@ -49,7 +49,6 @@ local config = {
 		java = {
 			signatureHelp = { enabled = true },
 			extendedClientCapabilities = capabilities,
-			-- handlers = handlers,
 			maven = {
 				downloadSources = true,
 			},

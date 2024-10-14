@@ -110,10 +110,10 @@ return {
 		}
 		require("mason").setup()
 
-		require("java").setup()
-		require("lspconfig").jdtls.setup({
-			handlers = handlers,
-		})
+		-- require("ftplugin.java").setup()
+		-- require("lspconfig").jdtls.setup({
+		-- 	handlers = handlers,
+		-- })
 
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
