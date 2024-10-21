@@ -25,7 +25,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				prompt_prefix = "",
 				entry_prefix = " ",
 				selection_caret = "> ",
-				path_display = { "shorten" },
+				path_display = { "smart" },
 
 				-- This is the important part: without this, Telescope windows will look a
 				-- bit odd due to how borders are highlighted.
