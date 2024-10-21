@@ -24,7 +24,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				-- These three settings are optional, but recommended.
 				prompt_prefix = "",
 				entry_prefix = " ",
-				selection_caret = " ",
+				selection_caret = "> ",
+				path_display = { "shorten" },
 
 				-- This is the important part: without this, Telescope windows will look a
 				-- bit odd due to how borders are highlighted.
