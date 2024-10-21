@@ -11,7 +11,7 @@ return { -- Autocompletion
 		local cmp = require("cmp")
 
 		cmp.setup({
-			completion = { autocomplete = false, completeopt = "menuone,noinsert,fuzzy" },
+			completion = { completeopt = "menuone,noinsert,fuzzy" },
 			window = { completion = { border = "rounded" } },
 			view = { docs = { auto_open = false } },
 			performance = { max_view_entries = 8 },
