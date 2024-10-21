@@ -13,8 +13,6 @@ return { -- Autocompletion
 		cmp.setup({
 			completion = { completeopt = "menuone,noinsert,fuzzy" },
 			window = { completion = { border = "rounded" } },
-			view = { docs = { auto_open = false } },
-			performance = { max_view_entries = 8 },
 			preselect = false,
 
 			mapping = cmp.mapping.preset.insert({
@@ -38,13 +36,6 @@ return { -- Autocompletion
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
-			},
-		})
-
-		cmp.setup.filetype({ "sql" }, {
-			sources = {
-				{ name = "vim-dadbod-completion" },
-				{ name = "buffer" },
 			},
 		})
 	end,
