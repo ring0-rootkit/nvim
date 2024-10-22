@@ -1,6 +1,7 @@
 return {
 	{
 		"catppuccin/nvim",
+		"blazkowolf/gruber-darker.nvim",
 		"ring0-rootkit/ring0-light.nvim",
 	},
 	{
@@ -12,15 +13,13 @@ return {
 					transparency = true,
 				},
 			})
+
 			require("catppuccin").setup({
 				transparent_background = true, -- disables setting the background color.
 			})
-
-			-- setup must be called before loading
-			vim.cmd.colorscheme("catppuccin")
 		end,
 		init = function()
-			vim.cmd.colorscheme("catppuccin-latte")
+			vim.cmd.colorscheme("gruber-darker")
 		end,
 	},
 	{
