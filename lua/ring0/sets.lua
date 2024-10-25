@@ -36,10 +36,10 @@ vim.o.background = "light"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
-	-- virtual_text = {
-	-- 	spacing = 5,
-	-- 	severity = { min = vim.diagnostic.severity.HINT },
-	-- },
-	virtual_text = false,
+	virtual_text = {
+		spacing = 5,
+		severity = { min = vim.diagnostic.severity.HINT },
+	},
+	-- virtual_text = false,
 	update_in_insert = true,
 })
