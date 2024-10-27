@@ -22,6 +22,10 @@ return {
 				map("n", "K", vim.lsp.buf.hover)
 				map("n", "gD", vim.lsp.buf.declaration)
 				map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
+
+				-- disable syntax highlighting
+				local client = vim.lsp.get_client_by_id(event.data.client_id)
+				client.server_capabilities.semanticTokensProvider = nil
 			end,
 		})
 
@@ -36,6 +40,8 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 		capabilities.textDocument.completion.completionItem.snippetSupport = false
+
+		capabilities.semanticTokensProvider = nil
 
 		local servers = {
 			clangd = {},

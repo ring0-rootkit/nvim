@@ -15,11 +15,10 @@ return {
 			})
 
 			require("catppuccin").setup({
-				transparent_background = true, -- disables setting the background color.
+				transparent_background = true,
 			})
-		end,
-		init = function()
-			vim.cmd.colorscheme("rose-pine-main")
+
+			vim.cmd.colorscheme("catppuccin-latte")
 		end,
 	},
 	{
