@@ -23,7 +23,7 @@ vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 -- vim.o.completeopt = "menuone,noinsert,noselect,popup"
-vim.o.termguicolors = false
+vim.o.termguicolors = true
 -- vim.o.guicursor = "n-v-c-i-ci-ve-sm:block,r-cr:hor20,o:hor50"
 
 vim.opt.colorcolumn = "81"
