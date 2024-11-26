@@ -40,6 +40,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 		spacing = 5,
 		severity = { min = vim.diagnostic.severity.HINT },
 	},
-	-- virtual_text = false,
+	virtual_text = false,
 	update_in_insert = true,
 })

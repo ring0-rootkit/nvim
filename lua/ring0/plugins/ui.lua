@@ -18,7 +18,7 @@ return {
 				transparent_background = true,
 			})
 
-			vim.cmd.colorscheme("catppuccin-latte")
+			vim.cmd.colorscheme("rose-pine-main")
 		end,
 	},
 	{
