@@ -5,22 +5,38 @@ return {
 		"ring0-rootkit/ring0-light.nvim",
 	},
 	{
-		"rose-pine/neovim",
+		"folke/tokyonight.nvim",
+		lazy = false,
 		priority = 1000,
+		opts = {},
 		config = function()
-			require("rose-pine").setup({
+			require("tokyonight").setup({
+				transparent = true,
 				styles = {
-					transparency = true,
+					sidebars = "transparent",
+					floats = "transparent",
 				},
 			})
-
-			require("catppuccin").setup({
-				transparent_background = true,
-			})
-
-			vim.cmd.colorscheme("rose-pine-main")
+			vim.cmd.colorscheme("tokyonight")
 		end,
 	},
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			styles = {
+	-- 				transparency = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		require("catppuccin").setup({
+	-- 			transparent_background = true,
+	-- 		})
+	--
+	-- 		vim.cmd.colorscheme("rose-pine-main")
+	-- 	end,
+	-- },
 	{
 		"stevearc/oil.nvim",
 		opts = {},
