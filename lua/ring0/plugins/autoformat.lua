@@ -15,6 +15,8 @@ return { -- Autoformat
 		notify_on_error = false,
 		format_on_save = function(bufnr)
 			local disable_filetypes = {
+				ts = true,
+				js = true,
 				-- c = true,
 				-- cpp = true,
 			}
