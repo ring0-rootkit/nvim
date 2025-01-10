@@ -32,7 +32,7 @@ vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = "lightgray", bg = "lightgray" 
 vim.wo.wrap = true
 -- vim.o.sidescroll = 5
 
-vim.o.background = "dark"
+vim.o.background = "light"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,

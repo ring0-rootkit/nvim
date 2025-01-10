@@ -17,8 +17,8 @@ return { -- Autoformat
 			local disable_filetypes = {
 				ts = true,
 				js = true,
-				-- c = true,
-				-- cpp = true,
+				c = true,
+				cpp = true,
 			}
 			return {
 				timeout_ms = 500,

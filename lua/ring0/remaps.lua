@@ -28,7 +28,7 @@ map("n", "x", '"_x')
 map("v", "x", '"_x')
 
 -- paste over highlited text without saving to clipboard
-map("v", "p", '"_xhp')
+map("v", "p", '"_xp')
 
 map("v", "<leader>s(", "di()<Esc>P")
 map("v", "<leader>s[", "di[]<Esc>P")
