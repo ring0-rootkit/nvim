@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
@@ -32,7 +32,7 @@ vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = "lightgray", bg = "lightgray" 
 vim.wo.wrap = true
 -- vim.o.sidescroll = 5
 
-vim.o.background = "dark"
+-- vim.o.background = "dark"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
@@ -43,3 +43,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	virtual_text = false,
 	update_in_insert = true,
 })
+
+vim.cmd(":syntax off")
