@@ -57,13 +57,13 @@ return {
 							parameterNames = true,
 							rangeVariableTypes = true,
 						},
-						analyses = {
-							fieldalignment = true,
-							nilness = true,
-							unusedparams = true,
-							unusedwrite = true,
-							useany = true,
-						},
+						-- analyses = {
+						-- 	fieldalignment = true,
+						-- 	nilness = true,
+						-- 	unusedparams = true,
+						-- 	unusedwrite = true,
+						-- 	useany = true,
+						-- },
 						codelenses = {
 							gc_details = false,
 							generate = true,

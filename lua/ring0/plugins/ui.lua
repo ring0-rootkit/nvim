@@ -28,7 +28,10 @@ return {
 				styles = {
 					transparency = true,
 				},
-				palette = { moon = { text = "#908caa", subtle = "#504c6a" } },
+				palette = {
+					moon = { text = "#908caa", subtle = "#504c6a" },
+					dawn = { text = "#000000", subtle = "#575279" },
+				},
 			})
 
 			require("catppuccin").setup({
