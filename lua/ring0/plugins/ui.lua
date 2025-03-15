@@ -38,7 +38,7 @@ return {
 				transparent_background = true,
 			})
 
-			vim.cmd.colorscheme("rose-pine-dawn")
+			vim.cmd.colorscheme("rose-pine-moon")
 		end,
 	},
 	{
