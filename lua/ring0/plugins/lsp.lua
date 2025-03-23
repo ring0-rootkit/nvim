@@ -44,7 +44,7 @@ return {
 		capabilities.semanticTokensProvider = nil
 
 		local servers = {
-			clangd = {},
+			-- clangd = {},
 			gopls = {
 				settings = {
 					gopls = {

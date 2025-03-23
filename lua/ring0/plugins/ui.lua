@@ -29,7 +29,7 @@ return {
 					transparency = true,
 				},
 				palette = {
-					moon = { text = "#908caa", subtle = "#504c6a" },
+					moon = { text = "#888888", subtle = "#555555" },
 					dawn = { text = "#000000", subtle = "#909090" },
 				},
 			})
@@ -38,7 +38,7 @@ return {
 				transparent_background = true,
 			})
 
-			vim.cmd.colorscheme("rose-pine-moon")
+			vim.cmd.colorscheme("rose-pine-dawn")
 		end,
 	},
 	{
