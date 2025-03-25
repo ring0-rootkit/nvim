@@ -26,7 +26,7 @@ vim.o.tabstop = 2
 vim.o.termguicolors = true
 -- vim.o.guicursor = "n-v-c-i-ci-ve-sm:block,r-cr:hor20,o:hor50"
 
-vim.opt.colorcolumn = "81"
+vim.opt.colorcolumn = "101"
 vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = "lightgray", bg = "lightgray" })
 
 vim.wo.wrap = true
