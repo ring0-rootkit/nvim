@@ -27,7 +27,7 @@ vim.o.termguicolors = false
 -- vim.o.guicursor = "n-v-c-i-ci-ve-sm:block,r-cr:hor20,o:hor50"
 
 vim.opt.colorcolumn = "101"
-vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = "lightgray", bg = "lightgray" })
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = "lightgray", bg = "lightgray", ctermfg = "black" })
 
 vim.wo.wrap = true
 -- vim.o.sidescroll = 5
