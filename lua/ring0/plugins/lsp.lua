@@ -29,7 +29,7 @@ return {
 			end,
 		})
 
-		local border = "rounded"
+		local border = "single"
 
 		-- LSP settings (for overriding per client)
 		local handlers = {
