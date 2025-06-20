@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
@@ -38,9 +38,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	underline = true,
 	virtual_text = {
 		spacing = 5,
-		severity = { min = vim.diagnostic.severity.HINT },
+		severity = { min = vim.diagnostic.severity.WARNING },
 	},
-	virtual_text = false,
+	-- virtual_text = true,
 	update_in_insert = true,
 })
 
