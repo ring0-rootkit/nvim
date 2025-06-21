@@ -30,20 +30,28 @@ return {
 			end,
 		})
 
-		local border = "rounded"
+		-- local border = "rounded"
 
 		-- LSP settings (for overriding per client)
-		local handlers = {
-			["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-			["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-		}
+		-- local handlers = {
+		-- 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+		-- 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+		-- }
 
-		require("lspconfig.ui.windows").default_options = {
-			border = border,
-		}
+		-- require("lspconfig.ui.windows").default_options = {
+		-- 	border = border,
+		-- }
 
 		vim.diagnostic.config({
-			float = { border = border },
+			-- update_in_insert = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = border,
+				source = "always",
+				header = "",
+				prefix = "",
+			},
 		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()

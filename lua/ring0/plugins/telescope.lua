@@ -18,6 +18,21 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 	},
 	config = function()
+		-----------------------------------------------------
+		-----DELETE AT SOME POINT WHEN BORDERS ARE FIXED-----
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "TelescopeFindPre",
+			callback = function()
+				vim.opt_local.winborder = "none"
+				vim.api.nvim_create_autocmd("WinLeave", {
+					once = true,
+					callback = function()
+						vim.opt_local.winborder = "rounded"
+					end,
+				})
+			end,
+		})
+		------------------------------------------------------
 		require("telescope").setup({
 
 			defaults = {
@@ -40,15 +55,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 					-- preview_width = 0.6,
 				},
 			},
-			extensions = {
-				["ui-select"] = {
-					require("telescope.themes").get_dropdown(),
-				},
-			},
 		})
 
 		pcall(require("telescope").load_extension, "fzf")
-		pcall(require("telescope").load_extension, "ui-select")
 
 		local builtin = require("telescope.builtin")
 		map("n", "<leader>sh", builtin.help_tags)

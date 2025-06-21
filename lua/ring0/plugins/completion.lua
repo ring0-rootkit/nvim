@@ -12,7 +12,7 @@ return { -- Autocompletion
 
 		cmp.setup({
 			completion = { autocomplete = false, completeopt = "menuone,noinsert,fuzzy" },
-			window = { completion = { border = "rounded" } },
+			window = { completion = { border = "rounded" }, documentation = { border = "rounded" } },
 			preselect = false,
 
 			mapping = cmp.mapping.preset.insert({
