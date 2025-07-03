@@ -35,14 +35,14 @@ vim.wo.wrap = true
 
 -- vim.o.background = "dark"
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	underline = true,
+vim.diagnostic.config({
 	virtual_text = {
-		spacing = 5,
-		severity = { min = vim.diagnostic.severity.WARNING },
+		prefix = "●", -- Could be '■', '▎', 'x'
 	},
-	-- virtual_text = true,
-	update_in_insert = true,
+	severity_sort = true,
+	float = {
+		source = "always", -- Or "if_many"
+	},
 })
 
-vim.cmd(":syntax off")
+-- vim.cmd(":syntax off")

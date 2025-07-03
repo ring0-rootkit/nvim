@@ -6,6 +6,9 @@ _G.wrap = function(mode)
 	vim.wo.wrap = mode
 end
 
+vim.api.nvim_set_keymap("n", "<C-S-f>", "<C-f>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-S-f>", "<C-f>", { noremap = true, silent = true })
+
 -- [[ Basic Keymaps ]]
 vim.opt.hlsearch = true
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -38,3 +41,5 @@ map("v", '<leader>s"', 'di""<Esc>P')
 map("v", "<leader>s`", "di``<Esc>P")
 
 map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
+
+map("t", "Esc", "<C-><C-n>")

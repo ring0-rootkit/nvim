@@ -6,9 +6,11 @@ return { -- Autocompletion
 
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
+		"onsails/lspkind.nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
+		local lspkind = require("lspkind")
 
 		cmp.setup({
 			completion = { autocomplete = false, completeopt = "menuone,noinsert,fuzzy" },
@@ -36,6 +38,19 @@ return { -- Autocompletion
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
+				{ name = "supermaven" },
+			},
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol", -- show only symbol annotations
+					maxwidth = {
+						menu = 50, -- leading text (labelDetails)
+						abbr = 50, -- actual suggestion item
+					},
+					ellipsis_char = "...",
+					show_labelDetails = true,
+					symbol_map = { Supermaven = "" },
+				}),
 			},
 		})
 	end,
