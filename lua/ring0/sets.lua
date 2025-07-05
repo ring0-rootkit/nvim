@@ -33,7 +33,7 @@ vim.o.winborder = "rounded"
 vim.wo.wrap = true
 -- vim.o.sidescroll = 5
 
--- vim.o.background = "dark"
+vim.o.background = "dark"
 
 vim.diagnostic.config({
 	virtual_text = {

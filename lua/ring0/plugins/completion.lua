@@ -2,7 +2,7 @@ return { -- Autocompletion
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-		"saadparwaiz1/cmp_luasnip",
+		-- "saadparwaiz1/cmp_luasnip",
 
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
@@ -24,7 +24,7 @@ return { -- Autocompletion
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ select = false }),
 
 				-- If you prefer more traditional completion keymaps,
 				-- you can uncomment the following lines
@@ -36,7 +36,7 @@ return { -- Autocompletion
 			}),
 			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
+				-- { name = "luasnip" },
 				{ name = "path" },
 				{ name = "supermaven" },
 			},
