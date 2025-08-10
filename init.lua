@@ -21,4 +21,5 @@ if result == "'prefer-light'\n" then
 	vim.cmd(":syntax off")
 else
 	vim.cmd("colorscheme rose-pine")
+	vim.cmd(":syntax off")
 end

@@ -64,6 +64,9 @@ return {
 		local servers = {
 			-- clangd = {},
 			gopls = {
+				custom_keymaps = function(bufnr)
+					map("n", "<leader>log", 'yiwoslog.Info("", "<ESC>pa", <ESC>pa)<ESC>')
+				end,
 				settings = {
 					gopls = {
 						hints = {
@@ -96,6 +99,9 @@ return {
 				},
 			},
 			rust_analyzer = {
+				custom_keymaps = function(bufnr)
+					map("n", "<leader>log", 'yiwoinfo!("<ESC>pa:{:#?}", <ESC>pa)<ESC>')
+				end,
 				settings = {
 					["rust-analyzer"] = {
 						completion = {
@@ -106,7 +112,11 @@ return {
 					},
 				},
 			},
-			ts_ls = {},
+			ts_ls = {
+				custom_keymaps = function(bufnr)
+					map("n", "<leader>log", "yiwoconsole.log(`<ESC>pa:${<ESC>pa}`)<ESC>")
+				end,
+			},
 			zls = {
 				settings = {
 					zls = {
@@ -143,8 +153,19 @@ return {
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
+		local on_attach = function(client, bufnr)
+			local opts = { noremap = true, silent = true, buffer = bufnr }
+
+			if servers[client.name] and servers[client.name].custom_keymaps then
+				servers[client.name].custom_keymaps(bufnr)
+			end
+		end
+
 		for server_name, server_config in pairs(servers) do
-			vim.lsp.config(server_name, server_config)
+			local config = vim.tbl_deep_extend("force", server_config, {
+				on_attach = on_attach,
+			})
+			vim.lsp.config(server_name, config)
 		end
 
 		require("mason-lspconfig").setup()
