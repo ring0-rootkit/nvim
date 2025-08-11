@@ -14,12 +14,11 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.splitright = false
 vim.opt.splitbelow = false
-vim.opt.list = false
+vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = false
 vim.opt.scrolloff = 10
-vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 8
 vim.o.swapfile = false
