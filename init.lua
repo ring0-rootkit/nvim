@@ -16,10 +16,6 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 local handle = io.popen("gsettings get org.gnome.desktop.interface color-scheme")
 local result = handle:read("*a")
 handle:close()
-if result == "'prefer-light'\n" then
-	vim.cmd("colorscheme catppuccin")
-	vim.cmd(":syntax off")
-else
-	vim.cmd("colorscheme rose-pine")
-	vim.cmd(":syntax off")
-end
+
+-- vim.cmd("colorscheme rose-pine")
+vim.cmd(":syntax off")
