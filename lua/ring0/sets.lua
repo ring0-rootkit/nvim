@@ -28,26 +28,12 @@ vim.o.foldlevel = 0
 
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.o.termguicolors = false
--- vim.o.guicursor = "n-v-c-i-ci-ve-sm:block,r-cr:hor20,o:hor50"
 
 vim.opt.colorcolumn = "101"
 
 vim.o.winborder = "rounded"
 
 vim.wo.wrap = true
--- vim.o.sidescroll = 5
-
--- vim.o.background = "dark"
-
-vim.diagnostic.config({
-	virtual_text = {
-		prefix = "●", -- Could be '■', '▎', 'x'
-	},
-	severity_sort = true,
-	float = {
-		source = "always", -- Or "if_many"
-	},
-})
 
 vim.opt.laststatus = 2
 vim.opt.statusline = " %f %m %= %l:%c ♥ "
