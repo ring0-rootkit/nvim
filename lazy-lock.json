@@ -1,5 +1,5 @@
 {
-  "compile-mode.nvim": { "branch": "main", "commit": "7dcd0bb6a4d5e0de690cc85fea4e2006a3169178" },
+  "compile-mode.nvim": { "branch": "main", "commit": "d3f85f14718327d9096ace01d970f70444032481" },
   "gitblame.nvim": { "branch": "main", "commit": "e4b368e4fed15545d89af2cbed861686a16863d2" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "nvim-web-devicons": { "branch": "master", "commit": "c2599a81ecabaae07c49ff9b45dcd032a8d90f1a" },

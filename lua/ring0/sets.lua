@@ -23,6 +23,8 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.swapfile = false
 
+vim.o.background = "dark"
+
 vim.o.foldmethod = "marker"
 vim.o.foldlevel = 0
 
