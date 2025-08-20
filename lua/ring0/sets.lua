@@ -31,7 +31,7 @@ vim.o.foldlevel = 0
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
 vim.o.termguicolors = false
 
-vim.opt.colorcolumn = "101"
+vim.opt.colorcolumn = "81"
 
 vim.o.winborder = "rounded"
 
