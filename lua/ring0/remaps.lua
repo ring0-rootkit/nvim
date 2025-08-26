@@ -46,5 +46,5 @@ map("t", "Esc", "<C-><C-n>")
 
 -- folding
 map("n", "<leader>o", ":foldopen<CR>")
-map("n", "<leader>c", ":foldclose<CR>")
+map("n", "<leader>p", ":foldclose<CR>")
 map("v", "<leader>w", ":fold<CR>")
