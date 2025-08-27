@@ -48,3 +48,21 @@ map("t", "Esc", "<C-><C-n>")
 map("n", "<leader>o", ":foldopen<CR>")
 map("n", "<leader>p", ":foldclose<CR>")
 map("v", "<leader>w", ":fold<CR>")
+
+
+map("n", "<leader>jk", function()
+	vim.cmd("vsplit *compilation*")
+	vim.bo.buftype = "nofile"
+	vim.bo.bufhidden = "hide"
+	vim.bo.swapfile = false
+	vim.cmd("vertical wincmd R")
+	vim.cmd("split")
+	vim.cmd("vertical wincmd J")
+	vim.cmd("vertical wincmd k")
+	vim.cmd("vertical wincmd H")
+	vim.cmd("vertical wincmd l")
+	vim.cmd("vertical wincmd j")
+	vim.cmd("resize 15")
+	vim.cmd("terminal")
+	vim.cmd("vertical wincmd h")
+end)
