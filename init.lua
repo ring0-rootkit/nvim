@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
--- vim.cmd(":syntax off")
+vim.cmd(":syntax off")
 vim.cmd(':highlight Statement   ctermfg=magenta')     -- any statement
 vim.cmd(':highlight Conditional ctermfg=magenta')   -- if, then, else, endif, switch, etc.
 vim.cmd(':highlight Repeat      ctermfg=magenta')        -- for, do, while, etc.
