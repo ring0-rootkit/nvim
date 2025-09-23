@@ -66,12 +66,12 @@ vim.opt.statusline = " %f %m %= %l:%c ♥ "
 vim.opt.hlsearch = true
 -- }}}
 -- THEME SETUP {{{
-vim.cmd(':highlight Statement   ctermfg=Cyan')     -- any statement
-vim.cmd(':highlight Conditional ctermfg=Cyan')   -- if, then, else, endif, switch, etc.
-vim.cmd(':highlight Repeat      ctermfg=Cyan')        -- for, do, while, etc.
-vim.cmd(':highlight Label       ctermfg=Cyan')         -- case, default, etc.
-vim.cmd(':highlight Keyword     ctermfg=Cyan')       -- any other keyword
-vim.cmd(':highlight Exception   ctermfg=Cyan')     -- try, catch, throw
+vim.cmd(':highlight Statement   ctermfg=LightCyan')     -- any statement
+vim.cmd(':highlight Conditional ctermfg=LightCyan')   -- if, then, else, endif, switch, etc.
+vim.cmd(':highlight Repeat      ctermfg=LightCyan')        -- for, do, while, etc.
+vim.cmd(':highlight Label       ctermfg=LightCyan')         -- case, default, etc.
+vim.cmd(':highlight Keyword     ctermfg=LightCyan')       -- any other keyword
+vim.cmd(':highlight Exception   ctermfg=LightCyan')     -- try, catch, throw
 -- }}}
 
 _G.map = function(mode, keystroke, opts)
