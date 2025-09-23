@@ -65,7 +65,6 @@ vim.opt.statusline = " %f %m %= %l:%c ♥ "
 
 vim.opt.hlsearch = true
 -- }}}
-
 -- THEME SETUP {{{
 vim.cmd(':highlight Statement   ctermfg=Cyan')     -- any statement
 vim.cmd(':highlight Conditional ctermfg=Cyan')   -- if, then, else, endif, switch, etc.
@@ -139,7 +138,6 @@ map("n", "<leader>jk", function()
 end)
 
 -- }}}
-
 -- PLUGINS {{{
 vim.pack.add({
 	"https://github.com/ring0-rootkit/compile-mode.nvim",
