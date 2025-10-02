@@ -167,14 +167,6 @@ map("n", "<leader>/", function()
 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown())
 end)
 -- }}}
--- THEME SETUP {{{
---vim.cmd(':highlight Statement   ctermfg=LightCyan')     -- any statement
---vim.cmd(':highlight Conditional ctermfg=LightCyan')   -- if, then, else, endif, switch, etc.
---vim.cmd(':highlight Repeat      ctermfg=LightCyan')        -- for, do, while, etc.
---vim.cmd(':highlight Label       ctermfg=LightCyan')         -- case, default, etc.
---vim.cmd(':highlight Keyword     ctermfg=LightCyan')       -- any other keyword
---vim.cmd(':highlight Exception   ctermfg=LightCyan')     -- try, catch, throw
--- }}}
 -- COMPLETION {{{
 local cmp = require("cmp")
 local lspkind = require("lspkind")
