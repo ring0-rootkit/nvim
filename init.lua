@@ -66,14 +66,6 @@ vim.opt.statusline = " %f %m %= %l:%c ♥ "
 
 vim.opt.hlsearch = true
 -- }}}
--- THEME SETUP {{{
-vim.cmd(':highlight Statement   ctermfg=LightCyan')     -- any statement
-vim.cmd(':highlight Conditional ctermfg=LightCyan')   -- if, then, else, endif, switch, etc.
-vim.cmd(':highlight Repeat      ctermfg=LightCyan')        -- for, do, while, etc.
-vim.cmd(':highlight Label       ctermfg=LightCyan')         -- case, default, etc.
-vim.cmd(':highlight Keyword     ctermfg=LightCyan')       -- any other keyword
-vim.cmd(':highlight Exception   ctermfg=LightCyan')     -- try, catch, throw
--- }}}
 
 _G.map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
@@ -121,27 +113,11 @@ map("v", "<leader>w", ":fold<CR>")
 
 map("t", "<esc><esc>", "<c-\\><c-n>")
 
-map("n", "<leader>jk", function()
-	vim.cmd("vsplit *compilation*")
-	vim.bo.buftype = "nofile"
-	vim.bo.bufhidden = "hide"
-	vim.bo.swapfile = false
-	vim.cmd("vertical wincmd R")
-	vim.cmd("split")
-	vim.cmd("vertical wincmd J")
-	vim.cmd("vertical wincmd k")
-	vim.cmd("vertical wincmd H")
-	vim.cmd("vertical wincmd l")
-	vim.cmd("vertical wincmd j")
-	vim.cmd("resize 15")
-	vim.cmd("terminal")
-	vim.cmd("vertical wincmd h")
-end)
-
 -- }}}
 -- PLUGINS {{{
 vim.pack.add({
-	"https://github.com/ring0-rootkit/compile-mode.nvim",
+	"https://github.com/ring0-rootkit/omarchy-neovim-colortheme",
+
 	"https://github.com/tpope/vim-sleuth",
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/nvim-telescope/telescope-fzf-native.nvim",
@@ -161,33 +137,18 @@ vim.pack.add({
 	"https://github.com/onsails/lspkind.nvim",
 })
 
-compile = require("compile-mode")
-compile.setup()
-map("n", "<leader>c", compile.compile_setup)
-map("n", "<leader>r", compile.compile)
-
+require("omarchy-neovim-colortheme").setup()
 require("gitblame").setup()
 require("mason").setup()
 require("oil").setup()
 require("telescope").setup({
 	defaults = {
-		-- These three settings are optional, but recommended.
 		prompt_prefix = "",
 		entry_prefix = " ",
 		selection_caret = "> ",
 		path_display = { "smart" },
-
-		-- This is the important part: without this, Telescope windows will look a
-		-- bit odd due to how borders are highlighted.
-		-- layout_strategy = "grey",
 		layout_config = {
-			-- The extension supports both "top" and "bottom" for the prompt.
 			prompt_position = "top",
-
-			-- You can adjust these settings to your liking.
-			-- width = 0.6,
-			-- height = 0.5,
-			-- preview_width = 0.6,
 		},
 	},
 })
@@ -205,6 +166,14 @@ map("n", "<leader><leader>", builtin.buffers)
 map("n", "<leader>/", function()
 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown())
 end)
+-- }}}
+-- THEME SETUP {{{
+--vim.cmd(':highlight Statement   ctermfg=LightCyan')     -- any statement
+--vim.cmd(':highlight Conditional ctermfg=LightCyan')   -- if, then, else, endif, switch, etc.
+--vim.cmd(':highlight Repeat      ctermfg=LightCyan')        -- for, do, while, etc.
+--vim.cmd(':highlight Label       ctermfg=LightCyan')         -- case, default, etc.
+--vim.cmd(':highlight Keyword     ctermfg=LightCyan')       -- any other keyword
+--vim.cmd(':highlight Exception   ctermfg=LightCyan')     -- try, catch, throw
 -- }}}
 -- COMPLETION {{{
 local cmp = require("cmp")
