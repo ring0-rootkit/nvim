@@ -67,6 +67,8 @@ vim.opt.statusline = " %f %m %= %l:%c ♥ "
 vim.opt.hlsearch = true
 -- }}}
 
+vim.cmd(":syntax off")
+
 _G.map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
 end
