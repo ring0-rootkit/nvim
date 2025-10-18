@@ -67,7 +67,15 @@ vim.opt.statusline = " %f %m %= %l:%c ♥ "
 vim.opt.hlsearch = true
 -- }}}
 
-vim.cmd(":syntax off")
+vim.cmd [[
+	syntax on
+	highlight Statement   ctermfg=Yellow
+	highlight Conditional ctermfg=Yellow
+	highlight Repeat      ctermfg=Yellow
+	highlight Label       ctermfg=Yellow
+	highlight Keyword     ctermfg=Yellow
+	highlight Exception   ctermfg=Yellow
+]]
 
 _G.map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
@@ -119,6 +127,8 @@ map("t", "<esc><esc>", "<c-\\><c-n>")
 -- PLUGINS {{{
 vim.pack.add({
 	"https://github.com/ring0-rootkit/omarchy-neovim-colortheme",
+	"https://github.com/catppuccin/nvim",
+
 
 	"https://github.com/tpope/vim-sleuth",
 	"https://github.com/nvim-lua/plenary.nvim",
@@ -137,9 +147,11 @@ vim.pack.add({
 	"https://github.com/hrsh7th/cmp-nvim-lsp",
 	"https://github.com/hrsh7th/cmp-path",
 	"https://github.com/onsails/lspkind.nvim",
+	"https://github.com/xiyaowong/transparent.nvim",
+	"https://github.com/folke/zen-mode.nvim",
+	"https://github.com/nvim-treesitter/nvim-treesitter",
 })
 
-require("omarchy-neovim-colortheme").setup()
 require("gitblame").setup()
 require("mason").setup()
 require("oil").setup()
@@ -169,6 +181,30 @@ map("n", "<leader>/", function()
 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown())
 end)
 -- }}}
+--{{{THEME
+
+-- DEFAULT THEME
+require('catppuccin').setup({
+	highlight_overrides = {
+		latte = function(latte)
+			return {
+				Statement = { fg = latte.yellow },
+				Conditional = { fg = latte.yellow },
+				Repeat = { fg = latte.yellow },
+				Label = { fg = latte.yellow },
+				Keyword = { fg = latte.yellow },
+				Exception = { fg = latte.yellow },
+			}
+		end,
+	},
+})
+
+vim.cmd(":colorscheme catppuccin")
+
+-- LOAD OMARCHY THEME
+-- require("omarchy-neovim-colortheme").setup()
+
+--}}}
 -- COMPLETION {{{
 local cmp = require("cmp")
 local lspkind = require("lspkind")
