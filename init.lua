@@ -129,7 +129,6 @@ vim.pack.add({
 	"https://github.com/ring0-rootkit/omarchy-neovim-colortheme",
 	"https://github.com/catppuccin/nvim",
 
-
 	"https://github.com/tpope/vim-sleuth",
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/nvim-telescope/telescope-fzf-native.nvim",
@@ -185,16 +184,37 @@ end)
 
 -- DEFAULT THEME
 require('catppuccin').setup({
+	color_overrides = {
+		latte = { text = "#000000" },
+	},
 	highlight_overrides = {
 		latte = function(latte)
-			return {
-				Statement = { fg = latte.yellow },
-				Conditional = { fg = latte.yellow },
-				Repeat = { fg = latte.yellow },
-				Label = { fg = latte.yellow },
-				Keyword = { fg = latte.yellow },
-				Exception = { fg = latte.yellow },
-			}
+			local h = {}
+
+			-- Statement = { fg = latte.yellow },
+			-- Conditional = { fg = latte.yellow },
+			-- Repeat = { fg = latte.yellow },
+			-- Label = { fg = latte.yellow },
+			-- Keyword = { fg = latte.yellow },
+			-- Exception = { fg = latte.yellow },
+
+			local groups = vim.fn.getcompletion("", "highlight")
+
+			for _, group in ipairs(groups) do
+				local name = group:lower()
+
+				if name:find("comment") then
+					h[group] = { fg = latte.overlay2, style = { "italic" } }
+				elseif name:find("string") then
+					h[group] = { fg = latte.green }
+				else
+					h[group] = { fg = "#000000" }
+				end
+			end
+
+			-- vim.print(h)
+
+			return h
 		end,
 	},
 })

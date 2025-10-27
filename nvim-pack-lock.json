@@ -1,0 +1,88 @@
+{
+  "plugins": {
+    "cmp-nvim-lsp": {
+      "rev": "bd5a7d6",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
+    },
+    "cmp-path": {
+      "rev": "c642487",
+      "src": "https://github.com/hrsh7th/cmp-path"
+    },
+    "gitblame.nvim": {
+      "rev": "e4b368e",
+      "src": "https://github.com/ring0-rootkit/gitblame.nvim"
+    },
+    "lspkind.nvim": {
+      "rev": "3ddd1b4",
+      "src": "https://github.com/onsails/lspkind.nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "83db017",
+      "src": "https://github.com/williamboman/mason-lspconfig.nvim"
+    },
+    "mason-tool-installer.nvim": {
+      "rev": "517ef59",
+      "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+    },
+    "mason.nvim": {
+      "rev": "ad7146a",
+      "src": "https://github.com/williamboman/mason.nvim"
+    },
+    "nvim": {
+      "rev": "8c4125e",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "nvim-cmp": {
+      "rev": "a7bcf1d",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
+    },
+    "nvim-lspconfig": {
+      "rev": "a9b2fb5",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-web-devicons": {
+      "rev": "b8221e4",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "oil.nvim": {
+      "rev": "7e1cd77",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "omarchy-neovim-colortheme": {
+      "rev": "7a3cbaf",
+      "src": "https://github.com/ring0-rootkit/omarchy-neovim-colortheme"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "1f08ed6",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+    },
+    "telescope-ui-select.nvim": {
+      "rev": "6e51d7d",
+      "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "b4da76b",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "transparent.nvim": {
+      "rev": "8ac5988",
+      "src": "https://github.com/xiyaowong/transparent.nvim"
+    },
+    "vim-sleuth": {
+      "rev": "be69bff",
+      "src": "https://github.com/tpope/vim-sleuth"
+    },
+    "zen-mode.nvim": {
+      "rev": "438a59c",
+      "src": "https://github.com/folke/zen-mode.nvim"
+    }
+  }
+}
