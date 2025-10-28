@@ -216,6 +216,34 @@ require('catppuccin').setup({
 
 			return h
 		end,
+		mocha = function(mocha)
+			local h = {}
+
+			-- Statement = { fg = latte.yellow },
+			-- Conditional = { fg = latte.yellow },
+			-- Repeat = { fg = latte.yellow },
+			-- Label = { fg = latte.yellow },
+			-- Keyword = { fg = latte.yellow },
+			-- Exception = { fg = latte.yellow },
+
+			local groups = vim.fn.getcompletion("", "highlight")
+
+			for _, group in ipairs(groups) do
+				local name = group:lower()
+
+				if name:find("comment") then
+					h[group] = { fg = mocha.overlay2, style = { "italic" } }
+				elseif name:find("string") then
+					h[group] = { fg = mocha.green }
+				else
+					h[group] = { fg = mocha.text }
+				end
+			end
+
+			-- vim.print(h)
+
+			return h
+		end,
 	},
 })
 
