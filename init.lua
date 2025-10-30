@@ -21,6 +21,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.bo.filetype = "terminal"
 	end,
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
+  callback = function() vim.treesitter.start() end,
+})
 -- }}}
 -- SETS {{{
 vim.g.mapleader = " "
@@ -53,7 +58,7 @@ vim.o.foldmethod = "marker"
 vim.o.foldlevel = 0
 
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
-vim.o.termguicolors = false
+vim.o.termguicolors = true
 
 vim.opt.colorcolumn = "81"
 
@@ -68,13 +73,13 @@ vim.opt.hlsearch = true
 -- }}}
 
 vim.cmd [[
-	syntax on
-	highlight Statement   ctermfg=Yellow
-	highlight Conditional ctermfg=Yellow
-	highlight Repeat      ctermfg=Yellow
-	highlight Label       ctermfg=Yellow
-	highlight Keyword     ctermfg=Yellow
-	highlight Exception   ctermfg=Yellow
+	"syntax on
+	"highlight Statement   ctermfg=Yellow
+	"highlight Conditional ctermfg=Yellow
+	"highlight Repeat      ctermfg=Yellow
+	"highlight Label       ctermfg=Yellow
+	"highlight Keyword     ctermfg=Yellow
+	"highlight Exception   ctermfg=Yellow
 ]]
 
 _G.map = function(mode, keystroke, opts)
@@ -148,7 +153,10 @@ vim.pack.add({
 	"https://github.com/onsails/lspkind.nvim",
 	"https://github.com/xiyaowong/transparent.nvim",
 	"https://github.com/folke/zen-mode.nvim",
-	"https://github.com/nvim-treesitter/nvim-treesitter",
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+})
+require('nvim-treesitter').setup({
+	ensure_installed = { 'rust', 'javascript', 'zig', 'go', 'c', 'c++', 'markdown', 'markdown_inline', 'lua' },
 })
 
 require("gitblame").setup()
@@ -191,13 +199,6 @@ require('catppuccin').setup({
 		latte = function(latte)
 			local h = {}
 
-			-- Statement = { fg = latte.yellow },
-			-- Conditional = { fg = latte.yellow },
-			-- Repeat = { fg = latte.yellow },
-			-- Label = { fg = latte.yellow },
-			-- Keyword = { fg = latte.yellow },
-			-- Exception = { fg = latte.yellow },
-
 			local groups = vim.fn.getcompletion("", "highlight")
 
 			for _, group in ipairs(groups) do
@@ -212,37 +213,17 @@ require('catppuccin').setup({
 				end
 			end
 
-			-- vim.print(h)
-
 			return h
 		end,
 		mocha = function(mocha)
-			local h = {}
-
-			-- Statement = { fg = latte.yellow },
-			-- Conditional = { fg = latte.yellow },
-			-- Repeat = { fg = latte.yellow },
-			-- Label = { fg = latte.yellow },
-			-- Keyword = { fg = latte.yellow },
-			-- Exception = { fg = latte.yellow },
-
-			local groups = vim.fn.getcompletion("", "highlight")
-
-			for _, group in ipairs(groups) do
-				local name = group:lower()
-
-				if name:find("comment") then
-					h[group] = { fg = mocha.overlay2, style = { "italic" } }
-				elseif name:find("string") then
-					h[group] = { fg = mocha.green }
-				else
-					h[group] = { fg = mocha.text }
-				end
-			end
-
-			-- vim.print(h)
-
-			return h
+			return {
+				Statement = { fg = mocha.yellow },
+				Conditional = { fg = mocha.yellow },
+				Repeat = { fg = mocha.yellow },
+				Label = { fg = mocha.yellow },
+				Keyword = { fg = mocha.yellow },
+				Exception = { fg = mocha.yellow },
+			}
 		end,
 	},
 })
@@ -317,8 +298,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
 
 		-- disable syntax highlighting
-		local client = vim.lsp.get_client_by_id(event.data.client_id)
-		client.server_capabilities.semanticTokensProvider = nil
+		-- local client = vim.lsp.get_client_by_id(event.data.client_id)
+		-- client.server_capabilities.semanticTokensProvider = nil
 	end,
 })
 
@@ -339,7 +320,6 @@ vim.diagnostic.config({
 	float = {
 		focusable = false,
 		style = "minimal",
-		border = border,
 		source = "always",
 		header = "",
 		prefix = "",
@@ -351,7 +331,7 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp"
 capabilities.textDocument.completion.completionItem.snippetSupport = false
 capabilities.signatureHelpProvider = false
 
-capabilities.semanticTokensProvider = nil
+-- capabilities.semanticTokensProvider = nil
 
 local servers = {
 	-- clangd = {},
@@ -367,13 +347,13 @@ local servers = {
 					parameterNames = true,
 					rangeVariableTypes = true,
 				},
-				-- analyses = {
-				-- 	fieldalignment = true,
-				-- 	nilness = true,
-				-- 	unusedparams = true,
-				-- 	unusedwrite = true,
-				-- 	useany = true,
-				-- },
+				analyses = {
+					fieldalignment = true,
+					nilness = true,
+					unusedparams = true,
+					unusedwrite = true,
+					useany = true,
+				},
 				codelenses = {
 					gc_details = false,
 					generate = true,
@@ -421,7 +401,7 @@ require("mason").setup()
 
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
-	"stylua", -- Used to format Lua code
+	"stylua",
 })
 require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
