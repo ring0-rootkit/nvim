@@ -22,10 +22,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	end,
 })
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '*' },
-  callback = function() vim.treesitter.start() end,
-})
 -- }}}
 -- SETS {{{
 vim.g.mapleader = " "
@@ -153,10 +149,6 @@ vim.pack.add({
 	"https://github.com/onsails/lspkind.nvim",
 	"https://github.com/xiyaowong/transparent.nvim",
 	"https://github.com/folke/zen-mode.nvim",
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
-})
-require('nvim-treesitter').setup({
-	ensure_installed = { 'rust', 'javascript', 'zig', 'go', 'c', 'c++', 'markdown', 'markdown_inline', 'lua' },
 })
 
 require("gitblame").setup()
@@ -214,6 +206,16 @@ require('catppuccin').setup({
 			end
 
 			return h
+		end,
+		_latte = function(latte)
+			return {
+				Statement = { fg = latte.yellow },
+				Conditional = { fg = latte.yellow },
+				Repeat = { fg = latte.yellow },
+				Label = { fg = latte.yellow },
+				Keyword = { fg = latte.yellow },
+				Exception = { fg = latte.yellow },
+			}
 		end,
 		mocha = function(mocha)
 			return {
