@@ -186,6 +186,7 @@ end)
 require('catppuccin').setup({
 	color_overrides = {
 		latte = { text = "#000000" },
+		mocha = { text = "#FFFFFF" },
 	},
 	highlight_overrides = {
 		latte = function(latte)
@@ -217,16 +218,16 @@ require('catppuccin').setup({
 				Exception = { fg = latte.yellow },
 			}
 		end,
-		mocha = function(mocha)
-			return {
-				Statement = { fg = mocha.yellow },
-				Conditional = { fg = mocha.yellow },
-				Repeat = { fg = mocha.yellow },
-				Label = { fg = mocha.yellow },
-				Keyword = { fg = mocha.yellow },
-				Exception = { fg = mocha.yellow },
-			}
-		end,
+		-- mocha = function(mocha)
+		-- 	return {
+		-- 		Statement = { fg = mocha.yellow },
+		-- 		Conditional = { fg = mocha.yellow },
+		-- 		Repeat = { fg = mocha.yellow },
+		-- 		Label = { fg = mocha.yellow },
+		-- 		Keyword = { fg = mocha.yellow },
+		-- 		Exception = { fg = mocha.yellow },
+		-- 	}
+		-- end,
 	},
 })
 
