@@ -66,8 +66,9 @@ vim.opt.laststatus = 2
 vim.opt.statusline = " %f %m %= %l:%c ♥ "
 
 vim.opt.hlsearch = true
+vim.opt.switchbuf = 'useopen'
 -- }}}
-
+-- OTHER {{{
 vim.cmd [[
 	"syntax on
 	"highlight Statement   ctermfg=Yellow
@@ -81,7 +82,7 @@ vim.cmd [[
 _G.map = function(mode, keystroke, opts)
 	vim.keymap.set(mode, keystroke, opts)
 end
-
+-- }}}
 -- REMAPS {{{
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -149,6 +150,9 @@ vim.pack.add({
 	"https://github.com/onsails/lspkind.nvim",
 	"https://github.com/xiyaowong/transparent.nvim",
 	"https://github.com/folke/zen-mode.nvim",
+
+	"https://github.com/nvim-treesitter/nvim-treesitter",
+	"https://github.com/rafaelsq/nvim-goc.lua",
 })
 
 require("gitblame").setup()
@@ -180,13 +184,38 @@ map("n", "<leader>/", function()
 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown())
 end)
 -- }}}
+-- go-test-cov {{{
+local goc = require'nvim-goc'
+goc.setup({ verticalSplit = false })
+
+vim.keymap.set('n', '<Leader>gf', function() goc.Coverage() end, {silent=true})
+vim.keymap.set('n', '<Leader>gt', function() goc.CoverageFunc() end, {silent=true})
+vim.keymap.set('n', '<Leader>gc', goc.ClearCoverage, {silent=true})
+
+cf = function(testCurrentFunction)
+  local cb = function(path, index)
+    if path then
+      vim.cmd(":silent exec \"!xdg-open file://" .. path .. "\\\\#file" .. index .. "\"")
+    end
+  end
+
+  if testCurrentFunction then
+    goc.CoverageFunc(nil, cb, 0)
+  else
+    goc.Coverage(nil, cb)
+  end
+end
+
+vim.keymap.set('n', '<leader>ga', cf, {silent=true})
+vim.keymap.set('n', '<Leader>gb', function() cf(true) end, {silent=true})
+-- }}}
 --{{{THEME
 
 -- DEFAULT THEME
 require('catppuccin').setup({
 	color_overrides = {
 		latte = { text = "#000000" },
-		mocha = { text = "#FFFFFF" },
+		mocha = { text = "#CDD6F4" },
 	},
 	highlight_overrides = {
 		latte = function(latte)

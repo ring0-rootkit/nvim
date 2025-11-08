@@ -36,6 +36,10 @@
       "rev": "a7bcf1d",
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
+    "nvim-goc.lua": {
+      "rev": "bcdf4d3",
+      "src": "https://github.com/rafaelsq/nvim-goc.lua"
+    },
     "nvim-lspconfig": {
       "rev": "87d3018",
       "src": "https://github.com/neovim/nvim-lspconfig"
