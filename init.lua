@@ -71,13 +71,13 @@ vim.opt.switchbuf = 'useopen'
 -- }}}
 -- OTHER {{{
 vim.cmd [[
-	syntax off
-	"highlight Statement   ctermfg=Yellow
-	"highlight Conditional ctermfg=Yellow
-	"highlight Repeat      ctermfg=Yellow
-	"highlight Label       ctermfg=Yellow
-	"highlight Keyword     ctermfg=Yellow
-	"highlight Exception   ctermfg=Yellow
+	"syntax off
+	highlight Statement   ctermfg=Yellow
+	highlight Conditional ctermfg=Yellow
+	highlight Repeat      ctermfg=Yellow
+	highlight Label       ctermfg=Yellow
+	highlight Keyword     ctermfg=Yellow
+	highlight Exception   ctermfg=Yellow
 ]]
 
 _G.map = function(mode, keystroke, opts)
