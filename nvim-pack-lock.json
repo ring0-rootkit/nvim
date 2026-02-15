@@ -12,6 +12,10 @@
       "rev": "e4b368e",
       "src": "https://github.com/ring0-rootkit/gitblame.nvim"
     },
+    "gruber-darker.nvim": {
+      "rev": "6615b4a",
+      "src": "https://github.com/blazkowolf/gruber-darker.nvim"
+    },
     "lspkind.nvim": {
       "rev": "3ddd1b4",
       "src": "https://github.com/onsails/lspkind.nvim"
@@ -27,6 +31,10 @@
     "mason.nvim": {
       "rev": "ad7146a",
       "src": "https://github.com/williamboman/mason.nvim"
+    },
+    "neovim": {
+      "rev": "cf2a288",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "nvim": {
       "rev": "8c4125e",
@@ -44,6 +52,7 @@
       "rev": "87d3018",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "nvim-treesitter": [],
     "nvim-web-devicons": {
       "rev": "8dcb311",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"

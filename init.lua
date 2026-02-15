@@ -45,8 +45,9 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = false
 vim.opt.scrolloff = 10
-vim.o.shiftwidth = 8
-vim.o.tabstop = 8
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.expandtab = true
 vim.o.swapfile = false
 vim.o.omnifunc = "v:lua.vim.lsp.omnifunc"
 
@@ -54,7 +55,7 @@ vim.o.foldmethod = "marker"
 vim.o.foldlevel = 0
 
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 
 vim.opt.colorcolumn = "81"
 
@@ -70,7 +71,7 @@ vim.opt.switchbuf = 'useopen'
 -- }}}
 -- OTHER {{{
 vim.cmd [[
-	"syntax on
+	syntax off
 	"highlight Statement   ctermfg=Yellow
 	"highlight Conditional ctermfg=Yellow
 	"highlight Repeat      ctermfg=Yellow
@@ -128,8 +129,9 @@ map("t", "<esc><esc>", "<c-\\><c-n>")
 -- }}}
 -- PLUGINS {{{
 vim.pack.add({
-	"https://github.com/ring0-rootkit/omarchy-neovim-colortheme",
 	"https://github.com/catppuccin/nvim",
+	"https://github.com/rose-pine/neovim",
+	"https://github.com/blazkowolf/gruber-darker.nvim",
 
 	"https://github.com/tpope/vim-sleuth",
 	"https://github.com/nvim-lua/plenary.nvim",
@@ -211,59 +213,7 @@ vim.keymap.set('n', '<Leader>gb', function() cf(true) end, {silent=true})
 -- }}}
 --{{{THEME
 
--- DEFAULT THEME
-require('catppuccin').setup({
-	color_overrides = {
-		latte = { text = "#000000" },
-		mocha = { text = "#CDD6F4" },
-	},
-	highlight_overrides = {
-		latte = function(latte)
-			local h = {}
-
-			local groups = vim.fn.getcompletion("", "highlight")
-
-			for _, group in ipairs(groups) do
-				local name = group:lower()
-
-				if name:find("comment") then
-					h[group] = { fg = latte.overlay2, style = { "italic" } }
-				elseif name:find("string") then
-					h[group] = { fg = latte.green }
-				else
-					h[group] = { fg = "#000000" }
-				end
-			end
-
-			return h
-		end,
-		_latte = function(latte)
-			return {
-				Statement = { fg = latte.yellow },
-				Conditional = { fg = latte.yellow },
-				Repeat = { fg = latte.yellow },
-				Label = { fg = latte.yellow },
-				Keyword = { fg = latte.yellow },
-				Exception = { fg = latte.yellow },
-			}
-		end,
-		-- mocha = function(mocha)
-		-- 	return {
-		-- 		Statement = { fg = mocha.yellow },
-		-- 		Conditional = { fg = mocha.yellow },
-		-- 		Repeat = { fg = mocha.yellow },
-		-- 		Label = { fg = mocha.yellow },
-		-- 		Keyword = { fg = mocha.yellow },
-		-- 		Exception = { fg = mocha.yellow },
-		-- 	}
-		-- end,
-	},
-})
-
-vim.cmd(":colorscheme catppuccin")
-
--- LOAD OMARCHY THEME
--- require("omarchy-neovim-colortheme").setup()
+-- vim.cmd(":colorscheme catppuccin")
 
 --}}}
 -- COMPLETION {{{
@@ -330,8 +280,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
 
 		-- disable syntax highlighting
-		-- local client = vim.lsp.get_client_by_id(event.data.client_id)
-		-- client.server_capabilities.semanticTokensProvider = nil
+		local client = vim.lsp.get_client_by_id(event.data.client_id)
+		client.server_capabilities.semanticTokensProvider = nil
 	end,
 })
 
