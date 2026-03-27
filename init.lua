@@ -55,7 +55,7 @@ vim.o.foldmethod = "marker"
 vim.o.foldlevel = 0
 
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
-vim.o.termguicolors = false
+vim.o.termguicolors = true
 
 vim.opt.colorcolumn = "81"
 
@@ -71,7 +71,7 @@ vim.opt.switchbuf = 'useopen'
 -- }}}
 -- OTHER {{{
 vim.cmd [[
-	syntax off
+	syntax on
 	"highlight Statement   ctermfg=Yellow
 	"highlight Conditional ctermfg=Yellow
 	"highlight Repeat      ctermfg=Yellow
@@ -142,6 +142,7 @@ vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
 	"https://github.com/stevearc/oil.nvim",
 	"https://github.com/ring0-rootkit/gitblame.nvim",
+	"https://github.com/ring0-rootkit/nvim-r0-theme",
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/williamboman/mason.nvim",
 	"https://github.com/williamboman/mason-lspconfig.nvim",
@@ -155,7 +156,13 @@ vim.pack.add({
 
 	"https://github.com/nvim-treesitter/nvim-treesitter",
 	"https://github.com/rafaelsq/nvim-goc.lua",
+
+    "https://github.com/MunifTanjim/nui.nvim",
+    "https://github.com/kndndrj/nvim-dbee",
 })
+
+-- require("dbee").install()
+require("dbee").setup()
 
 require("gitblame").setup()
 require("mason").setup()
@@ -213,7 +220,7 @@ vim.keymap.set('n', '<Leader>gb', function() cf(true) end, {silent=true})
 -- }}}
 --{{{THEME
 
--- vim.cmd(":colorscheme catppuccin")
+vim.cmd(":colorscheme miraculous")
 
 --}}}
 -- COMPLETION {{{
@@ -280,8 +287,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
 
 		-- disable syntax highlighting
-		local client = vim.lsp.get_client_by_id(event.data.client_id)
-		client.server_capabilities.semanticTokensProvider = nil
+		-- local client = vim.lsp.get_client_by_id(event.data.client_id)
+		-- client.server_capabilities.semanticTokensProvider = nil
 	end,
 })
 
@@ -312,8 +319,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = false
 capabilities.signatureHelpProvider = false
-
-capabilities.semanticTokensProvider = nil
 
 local servers = {
 	-- clangd = {},

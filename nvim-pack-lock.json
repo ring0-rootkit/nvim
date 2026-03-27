@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "ash.nvim": {
+      "rev": "89c1755",
+      "src": "https://github.com/bjarneo/ash.nvim"
+    },
     "cmp-nvim-lsp": {
       "rev": "bd5a7d6",
       "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
@@ -7,6 +11,10 @@
     "cmp-path": {
       "rev": "c642487",
       "src": "https://github.com/hrsh7th/cmp-path"
+    },
+    "dbout.nvim": {
+      "rev": "acf4102",
+      "src": "https://github.com/zongben/dbout.nvim"
     },
     "gitblame.nvim": {
       "rev": "e4b368e",
@@ -36,6 +44,10 @@
       "rev": "cf2a288",
       "src": "https://github.com/rose-pine/neovim"
     },
+    "nui.nvim": {
+      "rev": "de74099",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim": {
       "rev": "8c4125e",
       "src": "https://github.com/catppuccin/nvim"
@@ -44,6 +56,10 @@
       "rev": "a7bcf1d",
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
+    "nvim-dbee": {
+      "rev": "dda5176",
+      "src": "https://github.com/kndndrj/nvim-dbee"
+    },
     "nvim-goc.lua": {
       "rev": "bcdf4d3",
       "src": "https://github.com/rafaelsq/nvim-goc.lua"
@@ -51,6 +67,10 @@
     "nvim-lspconfig": {
       "rev": "87d3018",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-r0-theme": {
+      "rev": "f86f5f0",
+      "src": "https://github.com/ring0-rootkit/nvim-r0-theme"
     },
     "nvim-treesitter": [],
     "nvim-web-devicons": {
