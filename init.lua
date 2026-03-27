@@ -142,7 +142,7 @@ vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
 	"https://github.com/stevearc/oil.nvim",
 	"https://github.com/ring0-rootkit/gitblame.nvim",
-	"https://github.com/ring0-rootkit/nvim-r0-theme",
+	"https://github.com/ring0-rootkit/miraculous.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/williamboman/mason.nvim",
 	"https://github.com/williamboman/mason-lspconfig.nvim",

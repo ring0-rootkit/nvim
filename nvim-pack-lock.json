@@ -40,6 +40,10 @@
       "rev": "ad7146a",
       "src": "https://github.com/williamboman/mason.nvim"
     },
+    "miraculous.nvim": {
+      "rev": "d7757ef",
+      "src": "https://github.com/ring0-rootkit/miraculous.nvim"
+    },
     "neovim": {
       "rev": "cf2a288",
       "src": "https://github.com/rose-pine/neovim"
