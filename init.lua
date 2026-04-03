@@ -68,6 +68,14 @@ vim.opt.statusline = " %f %m %= %l:%c ♥ "
 
 vim.opt.hlsearch = true
 vim.opt.switchbuf = 'useopen'
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
 -- }}}
 -- OTHER {{{
 vim.cmd [[
@@ -160,6 +168,19 @@ vim.pack.add({
 
     "https://github.com/MunifTanjim/nui.nvim",
     "https://github.com/kndndrj/nvim-dbee",
+    "https://github.com/stevearc/conform.nvim",
+})
+
+require("conform").setup({
+    formatters_by_ft = {
+        zig = { "zigfmt" },
+        go = { "gofmt" },
+    },
+    format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
+    },
+    notify_on_error = false,
 })
 
 -- require("dbee").install()
@@ -221,7 +242,7 @@ vim.keymap.set('n', '<Leader>gb', function() cf(true) end, {silent=true})
 -- }}}
 --{{{THEME
 
-vim.cmd(":colorscheme miraculous-light")
+vim.cmd(":colorscheme miraculous")
 
 --}}}
 -- COMPLETION {{{
@@ -286,6 +307,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<C-k>", vim.lsp.buf.signature_help)
 		map("n", "gD", vim.lsp.buf.declaration)
 		map("n", "<leader>ee", "oif err != nil {<CR>}<esc>ko")
+
+        vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
 
 		-- disable syntax highlighting
 		-- local client = vim.lsp.get_client_by_id(event.data.client_id)
