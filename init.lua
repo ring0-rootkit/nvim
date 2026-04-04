@@ -134,6 +134,10 @@ map("v", "<leader>w", ":fold<CR>")
 
 map("t", "<esc><esc>", "<c-\\><c-n>")
 
+-- neotree
+map("n", "<leader>t", ":Neotree filesystem reveal right toggle<CR>")
+map("n", "<leader>gs", ":Neotree git_status float toggle<CR>")
+
 -- }}}
 -- PLUGINS {{{
 vim.pack.add({
@@ -169,6 +173,16 @@ vim.pack.add({
     "https://github.com/MunifTanjim/nui.nvim",
     "https://github.com/kndndrj/nvim-dbee",
     "https://github.com/stevearc/conform.nvim",
+})
+
+vim.pack.add({
+  {
+    src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+    version = vim.version.range('3')
+  },
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/MunifTanjim/nui.nvim",
+  "https://github.com/nvim-tree/nvim-web-devicons",
 })
 
 require("conform").setup({

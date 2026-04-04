@@ -52,6 +52,11 @@
       "rev": "2ffc3c1",
       "src": "https://github.com/ring0-rootkit/miraculous.nvim"
     },
+    "neo-tree.nvim": {
+      "rev": "84c75e7",
+      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
+      "version": "3.0.0 - 4.0.0"
+    },
     "neovim": {
       "rev": "cf2a288",
       "src": "https://github.com/rose-pine/neovim"
