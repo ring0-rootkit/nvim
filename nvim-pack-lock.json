@@ -49,7 +49,7 @@
       "src": "https://github.com/ring0-rootkit/miraculous-light.nvim"
     },
     "miraculous.nvim": {
-      "rev": "2ffc3c1",
+      "rev": "016bd73",
       "src": "https://github.com/ring0-rootkit/miraculous.nvim"
     },
     "neo-tree.nvim": {
@@ -86,7 +86,7 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-r0-theme": {
-      "rev": "2ffc3c1",
+      "rev": "016bd73",
       "src": "https://github.com/ring0-rootkit/nvim-r0-theme"
     },
     "nvim-treesitter": {
