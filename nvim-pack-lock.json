@@ -90,7 +90,8 @@
       "src": "https://github.com/ring0-rootkit/nvim-r0-theme"
     },
     "nvim-treesitter": {
-      "rev": "cf12346a"
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
       "rev": "40e9d5a",
