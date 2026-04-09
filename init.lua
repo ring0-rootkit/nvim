@@ -263,7 +263,7 @@ end, { silent = true })
 -- }}}
 --{{{THEME
 
-vim.cmd(":colorscheme miraculous-light")
+vim.cmd(":colorscheme miraculous")
 
 --}}}
 -- COMPLETION {{{
@@ -380,7 +380,6 @@ local servers = {
                     rangeVariableTypes = true,
                 },
                 analyses = {
-                    fieldalignment = true,
                     nilness = true,
                     unusedparams = true,
                     unusedwrite = true,
@@ -493,4 +492,37 @@ vim.api.nvim_create_autocmd("VimEnter", {
         vim.cmd("doautocmd FileType")
     end,
 })
+
+require("mason").setup()
+
+-- Ensure Mason binaries are in PATH
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
+
+-- Auto-enable all Mason-installed LSP servers
+local function auto_enable_lsps()
+    local mason_registry = vim.fn.stdpath("data") .. "/mason/packages"
+    local installed_lsps = {}
+
+    -- Check Mason's registry directory for installed packages
+    local handle = vim.loop.fs_scandir(mason_registry)
+    if handle then
+        while true do
+            local name, type = vim.loop.fs_scandir_next(handle)
+            if not name then break end
+            if type == "directory" then
+                -- Mason package names typically match LSP server names
+                table.insert(installed_lsps, name)
+            end
+        end
+    end
+
+    if #installed_lsps > 0 then
+        vim.lsp.enable(installed_lsps)
+    end
+end
+
+-- Run the auto-enable function
+auto_enable_lsps()
+
+-- }}}
 --}}}
