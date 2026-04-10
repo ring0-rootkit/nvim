@@ -402,7 +402,7 @@ local servers = {
 	},
 	rust_analyzer = {
 		settings = {
-			rust_analyzer = {
+			["rust-analyzer"] = {
 				inlayHints = {
 					bindingModeHints = { enable = true },
 					chainingHints = { enable = true },
