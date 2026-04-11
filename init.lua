@@ -155,6 +155,7 @@ vim.pack.add({
     "https://github.com/nvim-tree/nvim-web-devicons",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/ring0-rootkit/gitblame.nvim",
+    "https://github.com/ring0-rootkit/miraculous.nvim",
     "https://github.com/ring0-rootkit/miraculous-light.nvim",
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/williamboman/mason.nvim",
@@ -173,16 +174,10 @@ vim.pack.add({
     "https://github.com/MunifTanjim/nui.nvim",
     "https://github.com/kndndrj/nvim-dbee",
     "https://github.com/stevearc/conform.nvim",
-})
-
-vim.pack.add({
     {
         src = "https://github.com/nvim-neo-tree/neo-tree.nvim",
         version = vim.version.range("3"),
     },
-    "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/MunifTanjim/nui.nvim",
-    "https://github.com/nvim-tree/nvim-web-devicons",
 })
 
 require("conform").setup({
