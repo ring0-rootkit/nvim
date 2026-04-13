@@ -257,7 +257,7 @@ end, { silent = true })
 -- }}}
 --{{{THEME
 
-vim.cmd(":colorscheme miraculous-light")
+vim.cmd(":colorscheme miraculous")
 
 --}}}
 -- COMPLETION {{{
@@ -406,9 +406,7 @@ local servers = {
                     closureStyle = "impl_fn",
                     discriminantHints = { enable = "fieldless" },
                     expressionAdjustmentHints = {
-                        enable = "reborrow",
-                        hideOutsideUnsafe = false,
-                        mode = "prefix",
+                        enable = "never",
                     },
                     genericParameterHints = {
                         const = { enable = true },
@@ -423,7 +421,7 @@ local servers = {
                     maxLength = 40,
                     parameterHints = { enable = true },
                     rangeExclusiveHints = { enable = true },
-                    reborrowHints = { enable = "mutable" },
+                    reborrowHints = { enable = "never" },
                     renderColons = true,
                     typeHints = {
                         enable = true,

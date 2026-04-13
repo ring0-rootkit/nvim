@@ -86,7 +86,7 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-r0-theme": {
-      "rev": "9e2c23d032c3514e6e7405010ab2c9292fb7a51e",
+      "rev": "d691049c25f93524e713bf6cb7001aadba279d26",
       "src": "https://github.com/ring0-rootkit/nvim-r0-theme"
     },
     "nvim-treesitter": {
