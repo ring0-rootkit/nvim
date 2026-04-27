@@ -13,7 +13,7 @@
       "src": "https://github.com/hrsh7th/cmp-path"
     },
     "conform.nvim": {
-      "rev": "086a40d",
+      "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "dbout.nvim": {
@@ -33,7 +33,7 @@
       "src": "https://github.com/onsails/lspkind.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "0a3b42c3e503df87aef6d6513e13148381495c3a",
+      "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",
       "src": "https://github.com/williamboman/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
@@ -41,15 +41,15 @@
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
+      "rev": "12ddd182d9efbdc848b540f16484a583d52da0fb",
       "src": "https://github.com/williamboman/mason.nvim"
     },
     "miraculous-light.nvim": {
-      "rev": "b6d71063117ca6bb2b69ad8980443736888dca8e",
+      "rev": "7d56b97c44f7178a05924f61c84e60887b40c117",
       "src": "https://github.com/ring0-rootkit/miraculous-light.nvim"
     },
     "miraculous.nvim": {
-      "rev": "9e2c23d032c3514e6e7405010ab2c9292fb7a51e",
+      "rev": "d691049c25f93524e713bf6cb7001aadba279d26",
       "src": "https://github.com/ring0-rootkit/miraculous.nvim"
     },
     "neo-tree.nvim": {
@@ -82,7 +82,7 @@
       "src": "https://github.com/rafaelsq/nvim-goc.lua"
     },
     "nvim-lspconfig": {
-      "rev": "cb5bc0b2b35a6d513e3298d285db81453e791f4f",
+      "rev": "21db1fd40cbcbf1524ae154ab8f394fdf085749a",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-r0-theme": {
@@ -118,7 +118,7 @@
       "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
     },
     "telescope.nvim": {
-      "rev": "f7c673b8e46e8f233ff581d3624a517d33a7e264",
+      "rev": "506338434fec5ad19cb1f8d45bf92d66c4917393",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "transparent.nvim": {
