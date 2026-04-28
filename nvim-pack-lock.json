@@ -17,7 +17,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "dbout.nvim": {
-      "rev": "acf4102",
+      "rev": "2507b7a1d56afc1163d3a1c883fb17374c681c66",
       "src": "https://github.com/zongben/dbout.nvim"
     },
     "gitblame.nvim": {
@@ -41,7 +41,7 @@
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "12ddd182d9efbdc848b540f16484a583d52da0fb",
+      "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
       "src": "https://github.com/williamboman/mason.nvim"
     },
     "miraculous-light.nvim": {
@@ -49,7 +49,7 @@
       "src": "https://github.com/ring0-rootkit/miraculous-light.nvim"
     },
     "miraculous.nvim": {
-      "rev": "d691049c25f93524e713bf6cb7001aadba279d26",
+      "rev": "345c5b5042938771477cc79c0d4f94c6105a5db7",
       "src": "https://github.com/ring0-rootkit/miraculous.nvim"
     },
     "neo-tree.nvim": {
@@ -82,11 +82,11 @@
       "src": "https://github.com/rafaelsq/nvim-goc.lua"
     },
     "nvim-lspconfig": {
-      "rev": "21db1fd40cbcbf1524ae154ab8f394fdf085749a",
+      "rev": "bf5abe69c1874531f359a822d0cff4d73e26113f",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-r0-theme": {
-      "rev": "d691049c25f93524e713bf6cb7001aadba279d26",
+      "rev": "345c5b5042938771477cc79c0d4f94c6105a5db7",
       "src": "https://github.com/ring0-rootkit/nvim-r0-theme"
     },
     "nvim-treesitter": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
-      "rev": "c72328a5494b4502947a022fe69c0c47e53b6aa6",
+      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
@@ -124,6 +124,10 @@
     "transparent.nvim": {
       "rev": "8ac5988",
       "src": "https://github.com/xiyaowong/transparent.nvim"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
     },
     "vim-sleuth": {
       "rev": "be69bff",
