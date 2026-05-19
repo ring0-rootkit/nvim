@@ -24,6 +24,10 @@
       "rev": "e4b368e",
       "src": "https://github.com/ring0-rootkit/gitblame.nvim"
     },
+    "gitsigns.nvim": {
+      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
     "gruber-darker.nvim": {
       "rev": "aba065c",
       "src": "https://github.com/blazkowolf/gruber-darker.nvim"
@@ -45,7 +49,7 @@
       "src": "https://github.com/williamboman/mason.nvim"
     },
     "miraculous-light.nvim": {
-      "rev": "7d56b97c44f7178a05924f61c84e60887b40c117",
+      "rev": "58b6536574378fa40373185b4f95b94be0f923f5",
       "src": "https://github.com/ring0-rootkit/miraculous-light.nvim"
     },
     "miraculous.nvim": {
@@ -58,7 +62,7 @@
       "version": "3.0.0 - 4.0.0"
     },
     "neovim": {
-      "rev": "9504524e5ed0e326534698f637f9d038ba4cd0ee",
+      "rev": "6a961effd67f6130d36df6d1c05c48c739796dd2",
       "src": "https://github.com/rose-pine/neovim"
     },
     "nui.nvim": {
@@ -82,7 +86,7 @@
       "src": "https://github.com/rafaelsq/nvim-goc.lua"
     },
     "nvim-lspconfig": {
-      "rev": "bf5abe69c1874531f359a822d0cff4d73e26113f",
+      "rev": "31026a13eefb20681124706a79fc1df6bf11ab27",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-r0-theme": {
@@ -118,8 +122,12 @@
       "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
     },
     "telescope.nvim": {
-      "rev": "506338434fec5ad19cb1f8d45bf92d66c4917393",
+      "rev": "ec009610d5d259ec59a6edf0219ef3f7ee4732e5",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "tokyonight.nvim": {
+      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
+      "src": "https://github.com/folke/tokyonight.nvim"
     },
     "transparent.nvim": {
       "rev": "8ac5988",
