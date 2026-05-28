@@ -183,56 +183,6 @@ vim.pack.add({
 	},
 })
 
--- 1. Install the parsers you want
-require('nvim-treesitter').install { 
-    'markdown', 
-    'markdown_inline', 
-    'lua', 
-    'vim', 
-    'vimdoc' 
-}
-
--- 2. Enable features (highlighting, indents, folds) for specific file types
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'markdown', 'lua', 'vim' },
-  callback = function()
-    -- Enable syntax highlighting
-    pcall(vim.treesitter.start)
-    
-    -- Enable tree-sitter based folding (optional)
-    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo.foldmethod = 'expr'
-    
-    -- Enable tree-sitter based indentation (optional)
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-  end,
-})
-
--- 1. Install the parsers you want
-require('nvim-treesitter').install { 
-    'markdown', 
-    'markdown_inline', 
-    'lua', 
-    'vim', 
-    'vimdoc' 
-}
-
--- 2. Enable features (highlighting, indents, folds) for specific file types
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'markdown', 'lua', 'vim' },
-  callback = function()
-    -- Enable syntax highlighting
-    pcall(vim.treesitter.start)
-    
-    -- Enable tree-sitter based folding (optional)
-    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo.foldmethod = 'expr'
-    
-    -- Enable tree-sitter based indentation (optional)
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-  end,
-})
-
 require("conform").setup({
 	formatters_by_ft = {
 		zig = { "zigfmt" },
